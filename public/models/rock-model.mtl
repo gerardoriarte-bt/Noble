@@ -1,0 +1,15 @@
+# Blender 3.6.2 MTL File: 'Noble piedra 3.blend'
+# www.blender.org
+
+newmtl Material.003
+Ns 254.566101
+Ka 1.000000 1.000000 1.000000
+Ks 0.204545 0.204545 0.204545
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+# Nota: Las texturas se han comentado temporalmente
+# Si tienes las texturas, colócalas en public/models/ y descomenta estas líneas:
+# map_Kd Material.003_baseColor.png
+# map_Bump -bm 1.000000 Material.003_normal.png

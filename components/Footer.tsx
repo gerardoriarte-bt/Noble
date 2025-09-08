@@ -6,11 +6,12 @@ const Footer: React.FC = () => {
     <footer className="bg-noir border-t border-cloud/10 py-16">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
         <div className="flex flex-col">
-          <div className="flex items-center space-x-3 mb-4">
-              <div className="w-6 h-6 flex items-center justify-center font-serif text-2xl text-cloud">
-                  Π
-              </div>
-              <span className="text-xl font-bold tracking-widest text-cloud uppercase">Oble</span>
+          <div className="flex items-center mb-4">
+              <img 
+                  src="/Noble-logo-blanco.png" 
+                  alt="Noble Architecture Studio" 
+                  className="h-8 w-auto"
+              />
           </div>
           <p className="text-sm text-cloud/60 max-w-xs">
             Crafting spaces that embody righteousness, dignity, and a timeless presence.

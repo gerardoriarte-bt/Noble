@@ -1,17 +1,17 @@
 import React from 'react';
-import Hero from '../components/Hero';
-import Process from '../components/Process';
+import PerfectHero from '../components/PerfectHero';
+import HorizontalTimeline from '../components/HorizontalTimeline';
 import Metrics from '../components/Metrics';
-import Portfolio from '../components/Portfolio';
+import ImprovedPortfolio from '../components/ImprovedPortfolio';
 import Contact from '../components/Contact';
 
 const HomePage: React.FC = () => {
   return (
     <>
-      <Hero />
-      <Process />
+      <PerfectHero />
+      <HorizontalTimeline />
       <Metrics />
-      <Portfolio />
+      <ImprovedPortfolio />
       <Contact />
     </>
   );

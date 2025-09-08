@@ -4,74 +4,111 @@ import { portfolioProjects } from '../constants';
 import type { Project } from '../types';
 
 const PortfolioItem: React.FC<{ project: Project; className?: string }> = ({ project, className = '' }) => {
-    const [isExpanded, setIsExpanded] = React.useState(false);
+    const [isHovered, setIsHovered] = React.useState(false);
+
+    const containerVariants: Variants = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { 
+            opacity: 1, 
+            y: 0,
+            transition: { duration: 0.6, ease: "easeOut" }
+        }
+    };
+
+    const imageVariants: Variants = {
+        rest: { scale: 1 },
+        hover: { 
+            scale: 1.05,
+            transition: { duration: 0.4, ease: "easeOut" }
+        }
+    };
 
     const overlayVariants: Variants = {
         rest: { opacity: 0 },
-        hover: { opacity: 1, transition: { staggerChildren: 0.07, ease: 'easeOut' } },
+        hover: { 
+            opacity: 1,
+            transition: { duration: 0.3, ease: "easeOut" }
+        }
     };
 
-    const itemVariants: Variants = {
+    const contentVariants: Variants = {
         rest: { y: 20, opacity: 0 },
-        hover: { y: 0, opacity: 1 },
-    };
-
-    const descriptionVariants: Variants = {
-        collapsed: { 
-            opacity: 0, 
-            height: 0,
-            transition: { duration: 0.3, ease: "easeOut" },
-        },
-        expanded: { 
-            opacity: 1, 
-            height: 'auto',
-            transition: { duration: 0.5, ease: "easeOut", delay: 0.1 },
-        },
+        hover: { 
+            y: 0, 
+            opacity: 1,
+            transition: { duration: 0.4, ease: "easeOut" }
+        }
     };
 
     return (
         <motion.div
-            className={`group relative overflow-hidden ring-1 ring-cloud/10 hover:ring-camel transition-all duration-300 cursor-pointer ${className}`}
-            style={{ perspective: 800 }}
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
+            className={`group relative overflow-hidden cursor-pointer ${className}`}
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            onClick={() => setIsExpanded(!isExpanded)}
+            onHoverStart={() => setIsHovered(true)}
+            onHoverEnd={() => setIsHovered(false)}
         >
+            {/* Imagen principal */}
             <motion.div
-                className="w-full h-full"
-                whileHover={{ scale: 1.05, rotateX: 2, rotateY: -2 }}
-                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="relative w-full h-full"
+                variants={imageVariants}
+                initial="rest"
+                animate={isHovered ? "hover" : "rest"}
             >
-                <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover transition-all duration-700 ease-in-out-circ group-hover:brightness-50" />
+                <img 
+                    src={project.imageUrl} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover"
+                />
+                
+                {/* Overlay oscuro para el texto */}
                 <motion.div
-                    className="absolute inset-0 bg-gradient-to-t from-noir/80 to-transparent p-6 md:p-8 flex flex-col justify-end"
+                    className="absolute inset-0 bg-gradient-to-t from-noir/80 via-noir/20 to-transparent"
                     variants={overlayVariants}
                     initial="rest"
-                    whileHover="hover"
-                    animate={isExpanded ? 'hover' : 'rest'}
-                >
-                    <motion.h3 variants={itemVariants} className="text-xl md:text-2xl font-bold text-white uppercase tracking-wider">{project.title}</motion.h3>
-                    <motion.p variants={itemVariants} className="text-camel uppercase tracking-widest text-xs md:text-sm">{project.category}</motion.p>
-                    
-                    <motion.div
-                        className="font-serif overflow-hidden"
-                        variants={descriptionVariants}
-                        initial="collapsed"
-                        animate={isExpanded ? 'expanded' : 'collapsed'}
-                    >
-                        <p className="text-cloud/90 text-sm leading-relaxed mt-3 mb-4">{project.description}</p>
-                    </motion.div>
-
-                    <motion.div variants={itemVariants} className="w-full border-t border-cloud/30 pt-2 mt-auto">
-                         <div className="flex justify-between text-xs text-cloud/70 uppercase tracking-widest">
-                            <span>{project.location}</span>
-                            <span>{project.year}</span>
-                        </div>
-                    </motion.div>
-                </motion.div>
+                    animate={isHovered ? "hover" : "rest"}
+                />
             </motion.div>
+
+            {/* Contenido siempre visible */}
+            <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                {/* Título siempre visible */}
+                <h3 className="text-xl md:text-2xl font-serif text-cloud mb-2 tracking-wide">
+                    {project.title}
+                </h3>
+
+                {/* Categoría siempre visible */}
+                <p className="text-camel text-sm uppercase tracking-[0.2em] mb-3 font-light">
+                    {project.category}
+                </p>
+
+                {/* Descripción solo en hover */}
+                <motion.div
+                    variants={contentVariants}
+                    initial="rest"
+                    animate={isHovered ? "hover" : "rest"}
+                >
+                    <p className="text-cloud/90 text-sm leading-relaxed mb-4 max-w-sm">
+                        {project.description}
+                    </p>
+
+                    {/* Metadatos */}
+                    <div className="flex justify-between items-center text-xs text-cloud/70 uppercase tracking-[0.15em]">
+                        <span className="font-light">{project.location}</span>
+                        <span className="font-light">{project.year}</span>
+                    </div>
+                </motion.div>
+            </div>
+
+            {/* Indicador de hover */}
+            <motion.div
+                className="absolute top-6 right-6 w-2 h-2 bg-camel rounded-full"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={isHovered ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
+                transition={{ duration: 0.3, ease: "easeOut" }}
+            />
         </motion.div>
     );
 };
@@ -89,6 +126,7 @@ const Portfolio: React.FC = () => {
     return (
         <section id="portfolio" className="py-24 md:py-32 bg-fossil">
             <div className="container mx-auto px-6">
+                {/* Header de la sección */}
                 <motion.div 
                     className="mb-16"
                     initial={{ opacity: 0, y: 40 }}
@@ -96,12 +134,33 @@ const Portfolio: React.FC = () => {
                     viewport={{ once: true, amount: 0.5 }}
                     transition={{ duration: 0.8, ease: 'easeOut' }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-cloud">Featured Works</h2>
-                    <p className="text-cloud/60 mt-2">A selection of our defining projects.</p>
+                    <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-cloud">
+                        Featured Works
+                    </h2>
+                    <p className="text-cloud/60 mt-2">
+                        A selection of our defining projects.
+                    </p>
                 </motion.div>
+
+                {/* Grid de proyectos */}
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                     {gridItems.map((item) => (
-                        <PortfolioItem key={item.project.id} project={item.project} className={item.className} />
+                    {gridItems.map((item, index) => (
+                        <motion.div
+                            key={item.project.id}
+                            initial={{ opacity: 0, y: 40 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ 
+                                duration: 0.6, 
+                                ease: "easeOut",
+                                delay: index * 0.1
+                            }}
+                        >
+                            <PortfolioItem 
+                                project={item.project} 
+                                className={item.className} 
+                            />
+                        </motion.div>
                     ))}
                 </div>
             </div>

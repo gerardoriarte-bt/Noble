@@ -74,11 +74,12 @@ const Header: React.FC = () => {
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
                 <div className={`container mx-auto px-6 py-5 flex justify-between items-center border-b transition-colors duration-300 ${scrolled ? 'border-cloud/10' : 'border-transparent'}`}>
-                    <a href="/" className="flex items-center space-x-3 z-50">
-                        <div className="w-6 h-6 flex items-center justify-center font-serif text-2xl text-cloud">
-                            Π
-                        </div>
-                        <span className="text-xl font-bold tracking-widest text-cloud uppercase">Oble</span>
+                    <a href="/" className="flex items-center z-50">
+                        <img 
+                            src="/Noble-logo-blanco.png" 
+                            alt="Noble Architecture Studio" 
+                            className="h-8 w-auto"
+                        />
                     </a>
 
                     {/* Desktop Nav */}

@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #f2f2f1;
+  background-color: #121212;
+  overflow-x: hidden;
+}
+
+/* Estilos para el cursor personalizado */
+.cursor-none {
+  cursor: none;
+}
+
+/* Estilos para elementos 3D */
+canvas {
+  display: block;
+}
+
+/* Animaciones suaves */
+* {
+  transition: all 0.3s ease;
+}
+
+/* Estilos para scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b9a695;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a09582;
+}
+
+/* Hide horizontal scrollbar for timeline */
+.timeline-container::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Additional scrollbar hiding for horizontal timeline */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

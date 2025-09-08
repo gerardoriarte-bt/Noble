@@ -1,10 +1,8 @@
 import React from 'react';
-import About from '../components/About';
+import MinimalistAbout from '../components/MinimalistAbout';
 
 const AboutPage: React.FC = () => {
-  return (
-    <About />
-  );
+  return <MinimalistAbout />;
 };
 
 export default AboutPage;
