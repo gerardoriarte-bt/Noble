@@ -12,10 +12,10 @@ interface TimelineItem {
 const timelineData: TimelineItem[] = [
   {
     year: 2018,
-    title: "The Foundation",
-    description: "Noble Architecture Studio was founded with a vision to transform spaces through innovative design.",
-    image: "/images/portfolio/images.jpeg",
-    location: "Mexico City"
+    title: "Baltique",
+    description: "EDIFICIO DE 13 PISOS | 165 APARTAMENTOS | 1 Y 2 HAB. DE 50 M2 A 105 M2",
+    image: "/images/portfolio/baltique.jpg",
+    location: "DESARROLLO - GERENCIA - DISEÑO - CONSTRUCCIÓN - OPERACIÓN TURÍSTICA"
   },
   {
     year: 2019,
@@ -82,14 +82,14 @@ const HorizontalTimeline: React.FC = () => {
   }, [scrollXProgress]);
 
   return (
-    <section className="py-32 md:py-48 bg-noir overflow-hidden">
+    <section className="py-32 md:py-48 bg-cloud overflow-hidden relative">
       <div className="container mx-auto px-6 mb-16">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-serif text-cloud leading-tight mb-6">
+          <h2 className="text-4xl md:text-5xl font-serif text-noir leading-tight mb-6">
             Our Journey Through Time
           </h2>
           <div className="w-24 h-px bg-camel mx-auto mb-8"></div>
-          <p className="text-cloud/60 max-w-2xl mx-auto mb-12">
+          <p className="text-noir/60 max-w-2xl mx-auto mb-12">
             Six years of architectural innovation, each project building upon the last, 
             creating a legacy of transformative design.
           </p>
@@ -142,7 +142,7 @@ const HorizontalTimeline: React.FC = () => {
                   alt={item.title}
                   className="w-full h-full object-cover opacity-40"
                 />
-                <div className="absolute inset-0 bg-noir/60"></div>
+                <div className="absolute inset-0 bg-cloud/40"></div>
               </div>
 
               {/* Content */}
@@ -152,18 +152,22 @@ const HorizontalTimeline: React.FC = () => {
                   whileInView={{ y: 0, opacity: 1 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
                 >
-                  <h3 className="text-5xl md:text-6xl font-serif text-white mb-6 leading-tight">
+                  <h3 className="text-5xl md:text-6xl font-serif text-noir mb-6 leading-tight">
                     {item.title}
                   </h3>
                   
-                  <p className="text-xl md:text-2xl text-white/80 mb-8 leading-relaxed">
+                  <p className="text-xl md:text-2xl text-noir/80 mb-8 leading-relaxed">
                     {item.description}
                   </p>
                   
-                  <div className="flex items-center justify-center gap-4 text-white/60">
-                    <span className="text-lg">{item.location}</span>
-                    <div className="w-8 h-px bg-camel"></div>
-                    <span className="text-lg">{item.year}</span>
+                  <div className="flex items-center justify-center gap-4 text-noir/60">
+                    <span className="text-base">{item.location}</span>
+                    {item.year !== 2018 && (
+                      <>
+                        <div className="w-8 h-px bg-camel"></div>
+                        <span className="text-base">{item.year}</span>
+                      </>
+                    )}
                   </div>
                 </motion.div>
               </div>
@@ -175,7 +179,7 @@ const HorizontalTimeline: React.FC = () => {
                     <div
                       key={i}
                       className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                        i === index ? 'bg-camel w-8' : 'bg-white/30'
+                        i === index ? 'bg-camel w-8' : 'bg-noir/30'
                       }`}
                     />
                   ))}
@@ -189,7 +193,7 @@ const HorizontalTimeline: React.FC = () => {
       {/* Scroll Indicator */}
       <div className="text-center mt-12">
         <motion.div
-          className="inline-flex items-center gap-3 text-cloud/60"
+          className="inline-flex items-center gap-3 text-noir/60"
           animate={{ y: [0, 5, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
         >

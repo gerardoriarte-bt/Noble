@@ -50,3 +50,5 @@ const RockModelWithMTL: React.FC = () => {
 };
 
 export default RockModelWithMTL;
+
+

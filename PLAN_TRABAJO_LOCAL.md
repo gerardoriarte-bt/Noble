@@ -291,3 +291,5 @@ Este plan de trabajo te permitirá configurar y probar el proyecto Noble Archite
 **Documento creado**: Diciembre 2024  
 **Versión**: 1.0  
 **Estado**: Listo para implementación
+
+

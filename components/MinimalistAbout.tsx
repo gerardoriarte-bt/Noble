@@ -20,7 +20,7 @@ const itemVariants: Variants = {
 
 const MinimalistAbout: React.FC = () => {
     return (
-        <section className="py-32 md:py-48 bg-noir relative overflow-hidden">
+        <section className="py-32 md:py-48 bg-cloud relative overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0 pointer-events-none">
                 <motion.div 
@@ -55,7 +55,7 @@ const MinimalistAbout: React.FC = () => {
                     
                     {/* Center Column - Main Content */}
                     <motion.div className="lg:col-span-6" variants={itemVariants}>
-                        <h2 className="text-6xl md:text-7xl lg:text-8xl font-serif leading-[0.9] text-cloud mb-12">
+                        <h2 className="text-6xl md:text-7xl lg:text-8xl font-serif leading-[0.9] text-noir mb-12">
                             We are
                             <br />
                             <span className="text-camel/60">architects</span>
@@ -76,11 +76,11 @@ const MinimalistAbout: React.FC = () => {
                     {/* Center Column - Philosophy */}
                     <motion.div className="lg:col-span-8" variants={itemVariants}>
                         <div className="space-y-8">
-                            <p className="text-xl md:text-2xl text-cloud/60 leading-relaxed font-light">
+                            <p className="text-xl md:text-2xl text-noir/60 leading-relaxed font-light">
                                 In the space between form and function, we find meaning.
                             </p>
                             <div className="w-24 h-px bg-camel/30"></div>
-                            <p className="text-lg text-cloud/50 leading-relaxed font-light max-w-2xl">
+                            <p className="text-lg text-noir/50 leading-relaxed font-light max-w-2xl">
                                 Every structure is a dialogue between light and shadow, 
                                 between the built and the unbuilt, between presence and absence.
                             </p>
@@ -98,8 +98,8 @@ const MinimalistAbout: React.FC = () => {
                         <div className="lg:w-1/3">
                             <div className="space-y-4">
                                 <div className="w-16 h-px bg-camel"></div>
-                                <h3 className="text-2xl font-serif text-cloud">Integrity</h3>
-                                <p className="text-cloud/50 font-light leading-relaxed">
+                                <h3 className="text-2xl font-serif text-noir">Integrity</h3>
+                                <p className="text-noir/50 font-light leading-relaxed">
                                     We build with purpose and honesty, ensuring every structure stands as a testament to our unwavering principles.
                                 </p>
                             </div>
@@ -109,8 +109,8 @@ const MinimalistAbout: React.FC = () => {
                         <div className="lg:w-1/3">
                             <div className="space-y-4">
                                 <div className="w-16 h-px bg-camel"></div>
-                                <h3 className="text-2xl font-serif text-cloud">Timelessness</h3>
-                                <p className="text-cloud/50 font-light leading-relaxed">
+                                <h3 className="text-2xl font-serif text-noir">Timelessness</h3>
+                                <p className="text-noir/50 font-light leading-relaxed">
                                     Our design philosophy transcends trends, focusing on creating spaces with enduring relevance and lasting beauty.
                                 </p>
                             </div>
@@ -120,8 +120,8 @@ const MinimalistAbout: React.FC = () => {
                         <div className="lg:w-1/3">
                             <div className="space-y-4">
                                 <div className="w-16 h-px bg-camel"></div>
-                                <h3 className="text-2xl font-serif text-cloud">Dignity</h3>
-                                <p className="text-cloud/50 font-light leading-relaxed">
+                                <h3 className="text-2xl font-serif text-noir">Dignity</h3>
+                                <p className="text-noir/50 font-light leading-relaxed">
                                     We approach every project with respect for its context, its materials, and the people who will inhabit the space.
                                 </p>
                             </div>
@@ -137,9 +137,9 @@ const MinimalistAbout: React.FC = () => {
                             <div className="w-full h-full bg-gradient-to-br from-camel/10 to-cloud/5 rounded-lg"></div>
                         </div>
                         <div className="space-y-4">
-                            <h4 className="text-3xl font-serif text-cloud">Javier Moreno</h4>
+                            <h4 className="text-3xl font-serif text-noir">Javier Moreno</h4>
                             <p className="text-sm uppercase tracking-wider text-camel">Founding Partner</p>
-                            <p className="text-cloud/60 font-light leading-relaxed">
+                            <p className="text-noir/60 font-light leading-relaxed">
                                 With over 20 years of experience, Javier's vision is rooted in creating structures that are both monumental and deeply human.
                             </p>
                         </div>
@@ -151,9 +151,9 @@ const MinimalistAbout: React.FC = () => {
                             <div className="w-full h-full bg-gradient-to-br from-cloud/10 to-camel/5 rounded-lg"></div>
                         </div>
                         <div className="space-y-4">
-                            <h4 className="text-3xl font-serif text-cloud">Elena Soto</h4>
+                            <h4 className="text-3xl font-serif text-noir">Elena Soto</h4>
                             <p className="text-sm uppercase tracking-wider text-camel">Design Director</p>
-                            <p className="text-cloud/60 font-light leading-relaxed">
+                            <p className="text-noir/60 font-light leading-relaxed">
                                 Elena believes in the power of light and space to shape experience, crafting interiors that are minimal yet warm.
                             </p>
                         </div>
@@ -164,7 +164,7 @@ const MinimalistAbout: React.FC = () => {
                 <motion.div className="text-center mt-32" variants={itemVariants}>
                     <div className="max-w-3xl mx-auto space-y-8">
                         <div className="w-32 h-px bg-camel mx-auto"></div>
-                        <p className="text-2xl md:text-3xl font-serif text-cloud/80 leading-relaxed">
+                        <p className="text-2xl md:text-3xl font-serif text-noir/80 leading-relaxed">
                             We are architects of landmarks, crafting spaces that embody righteousness, dignity, and a timeless presence.
                         </p>
                         <div className="w-32 h-px bg-camel mx-auto"></div>
@@ -176,3 +176,5 @@ const MinimalistAbout: React.FC = () => {
 };
 
 export default MinimalistAbout;
+
+

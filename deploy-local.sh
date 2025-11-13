@@ -45,3 +45,5 @@ ssh -i "$PEM_FILE" ubuntu@$SERVER_IP "sudo systemctl reload nginx"
 
 echo "✅ Despliegue completado exitosamente!"
 echo "🌐 Tu aplicación está disponible en: http://$SERVER_IP"
+
+

@@ -30,7 +30,7 @@ const Metrics: React.FC = () => {
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <section id="metrics" className="py-24 md:py-32 bg-noir">
+    <section id="metrics" className="py-24 md:py-32 bg-cloud">
       <div className="container mx-auto px-6" ref={ref}>
         <motion.div
           className="text-center mb-16"
@@ -38,10 +38,10 @@ const Metrics: React.FC = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-cloud">
+          <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-noir">
             By The Numbers
           </h2>
-          <p className="text-cloud/60 mt-2 max-w-2xl mx-auto">
+          <p className="text-noir/60 mt-2 max-w-2xl mx-auto">
             Our legacy is built on a foundation of tangible results and
             architectural excellence.
           </p>
@@ -64,7 +64,7 @@ const Metrics: React.FC = () => {
                 {isInView && <AnimatedNumber value={metric.value} />}
                 {metric.suffix}
               </p>
-              <h3 className="mt-3 text-sm uppercase tracking-wider text-cloud/70">
+              <h3 className="mt-3 text-sm uppercase tracking-wider text-noir/70">
                 {metric.label}
               </h3>
             </motion.div>

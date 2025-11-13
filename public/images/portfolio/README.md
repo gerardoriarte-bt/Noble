@@ -33,3 +33,5 @@ Las imágenes deben reflejar:
 ## Alternativa Temporal
 
 Si no tienes las imágenes listas, el sitio mostrará placeholders con gradientes grises hasta que agregues las imágenes reales.
+
+

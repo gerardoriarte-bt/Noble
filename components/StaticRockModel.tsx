@@ -45,7 +45,7 @@ const StaticRockModel: React.FC = () => {
   return (
     <group 
       ref={meshRef} 
-      scale={1.2}
+      scale={0.6}
     >
       <primitive object={model} />
     </group>
@@ -53,3 +53,5 @@ const StaticRockModel: React.FC = () => {
 };
 
 export default StaticRockModel;
+
+

@@ -23,7 +23,7 @@ const App: React.FC = () => {
   return (
     <MotionConfig transition={{ duration: 0.7, ease: "easeInOut" }}>
       <CustomCursor />
-      <div className="bg-noir text-cloud font-sans antialiased overflow-x-hidden cursor-none">
+      <div className="bg-cloud text-noir font-sans antialiased overflow-x-hidden cursor-none">
         <Header />
         <main>
           {component}

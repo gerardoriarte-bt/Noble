@@ -71,3 +71,5 @@ echo "⏰ Configurando renovación automática de SSL..."
 echo "✅ Configuración de dominio completada!"
 echo "🌐 Tu sitio está disponible en: https://$DOMAIN"
 echo "📧 Certificado SSL configurado y renovación automática activada"
+
+

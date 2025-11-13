@@ -71,3 +71,5 @@ echo "📋 Próximos pasos:"
 echo "1. Subir tu código al servidor"
 echo "2. Ejecutar: npm install && npm run build"
 echo "3. Configurar dominio y SSL"
+
+

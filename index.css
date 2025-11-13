@@ -16,8 +16,8 @@ html {
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  color: #f2f2f1;
-  background-color: #121212;
+  color: #121212;
+  background-color: #f2f2f1;
   overflow-x: hidden;
 }
 
@@ -42,7 +42,7 @@ canvas {
 }
 
 ::-webkit-scrollbar-track {
-  background: #121212;
+  background: #f2f2f1;
 }
 
 ::-webkit-scrollbar-thumb {

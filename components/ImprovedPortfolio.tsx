@@ -126,14 +126,14 @@ const PortfolioItem: React.FC<{ project: Project; className?: string }> = ({ pro
 
 const ImprovedPortfolio: React.FC = () => {
     return (
-        <section id="portfolio" className="py-32 md:py-48 bg-noir">
+        <section id="portfolio" className="py-32 md:py-48 bg-cloud">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
-                    <h2 className="text-4xl md:text-5xl font-serif text-cloud leading-tight mb-6">
+                    <h2 className="text-4xl md:text-5xl font-serif text-noir leading-tight mb-6">
                         Featured Works
                     </h2>
                     <div className="w-24 h-px bg-camel mx-auto mb-8"></div>
-                    <p className="text-cloud/60 max-w-2xl mx-auto">
+                    <p className="text-noir/60 max-w-2xl mx-auto">
                         A curated selection of our most impactful architectural projects, 
                         showcasing our commitment to innovative design and sustainable practices.
                     </p>
@@ -170,3 +170,5 @@ const ImprovedPortfolio: React.FC = () => {
 };
 
 export default ImprovedPortfolio;
+
+

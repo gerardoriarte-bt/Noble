@@ -116,3 +116,5 @@ Si encuentras problemas, verifica:
 2. DNS apunta a la IP correcta
 3. Nginx está ejecutándose
 4. Archivos están en `/var/www/noble/dist/`
+
+

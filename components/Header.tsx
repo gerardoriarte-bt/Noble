@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
 
-const NavLink: React.FC<{ href: string, children: React.ReactNode }> = ({ href, children }) => {
+const NavLink: React.FC<{ href: string, children: React.ReactNode, scrolled: boolean }> = ({ href, children, scrolled }) => {
     return (
         <motion.a 
             href={href} 
-            className="relative text-sm uppercase tracking-wider text-cloud/70 hover:text-cloud transition-colors duration-300"
-            whileHover="hover"
+            className="relative text-sm uppercase tracking-wider transition-colors duration-300"
+            style={{
+                color: scrolled ? 'rgba(242, 242, 241, 0.7)' : '#1C352D',
+            }}
+            whileHover={{
+                color: scrolled ? 'rgba(242, 242, 241, 1)' : '#1C352D',
+            }}
             initial="rest"
         >
             {children}
@@ -28,7 +33,7 @@ const MobileNavLink: React.FC<{ href: string, children: React.ReactNode, onClick
          <motion.a
             href={href}
             onClick={onClick}
-            className="text-3xl font-serif text-cloud/80 hover:text-cloud transition-colors duration-300"
+            className="text-3xl font-serif text-noir/80 hover:text-noir transition-colors duration-300"
             variants={{
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
@@ -68,25 +73,25 @@ const Header: React.FC = () => {
                 className="fixed top-0 left-0 right-0 z-50 w-full"
                 initial={false}
                 animate={{
-                    backgroundColor: scrolled ? 'rgba(18, 18, 18, 0.8)' : 'rgba(18, 18, 18, 0)',
+                    backgroundColor: scrolled ? 'rgba(242, 242, 241, 0.9)' : 'rgba(242, 242, 241, 0)',
                     backdropFilter: scrolled ? 'blur(10px)' : 'blur(0px)',
                 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
             >
-                <div className={`container mx-auto px-6 py-5 flex justify-between items-center border-b transition-colors duration-300 ${scrolled ? 'border-cloud/10' : 'border-transparent'}`}>
+                <div className={`container mx-auto px-6 py-5 flex justify-between items-center border-b transition-colors duration-300 ${scrolled ? 'border-noir/10' : 'border-transparent'}`}>
                     <a href="/" className="flex items-center z-50">
                         <img 
                             src="/Noble-logo-blanco.png" 
                             alt="Noble Architecture Studio" 
-                            className="h-8 w-auto"
+                            className="h-24 w-auto"
                         />
                     </a>
 
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex items-center space-x-8">
-                        <NavLink href="/about">About</NavLink>
-                        <NavLink href="/#process">Process</NavLink>
-                        <NavLink href="/#portfolio">Portfolio</NavLink>
+                        <NavLink href="/about" scrolled={scrolled}>About</NavLink>
+                        <NavLink href="/#process" scrolled={scrolled}>Process</NavLink>
+                        <NavLink href="/#portfolio" scrolled={scrolled}>Portfolio</NavLink>
                         <motion.a 
                             href="/#contact" 
                             className="bg-camel text-noir text-sm uppercase tracking-wider font-medium px-6 py-3"
@@ -108,7 +113,10 @@ const Header: React.FC = () => {
                             aria-expanded={mobileMenuOpen}
                         >
                             <motion.span
-                                className="absolute h-0.5 w-6 bg-cloud block rounded-full"
+                                className="absolute h-0.5 w-6 block rounded-full"
+                                style={{
+                                    backgroundColor: scrolled ? '#121212' : '#1C352D',
+                                }}
                                 variants={{
                                     closed: { top: '35%', rotate: 0 },
                                     open: { top: '50%', y: '-50%', rotate: 45 },
@@ -116,7 +124,10 @@ const Header: React.FC = () => {
                                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                             />
                             <motion.span
-                                className="absolute h-0.5 w-6 bg-cloud block rounded-full"
+                                className="absolute h-0.5 w-6 block rounded-full"
+                                style={{
+                                    backgroundColor: scrolled ? '#121212' : '#1C352D',
+                                }}
                                 variants={{
                                     closed: { top: '65%', rotate: 0 },
                                     open: { top: '50%', y: '-50%', rotate: -45 },
@@ -132,7 +143,7 @@ const Header: React.FC = () => {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        className="fixed inset-0 bg-noir/95 backdrop-blur-lg z-40 flex flex-col justify-center items-center md:hidden"
+                        className="fixed inset-0 bg-cloud/95 backdrop-blur-lg z-40 flex flex-col justify-center items-center md:hidden"
                         variants={mobileMenuVariants}
                         initial="hidden"
                         animate="visible"

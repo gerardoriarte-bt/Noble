@@ -97,3 +97,5 @@ const targetY = mouse.y * 0.2;  // Sensibilidad vertical
 ---
 
 **¿Necesitas ayuda?** Una vez que subas los archivos, puedo ayudarte a implementar el modelo y ajustar cualquier configuración necesaria.
+
+
