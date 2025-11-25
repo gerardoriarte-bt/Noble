@@ -15,8 +15,8 @@ export default {
         noir: '#121212',
       },
       fontFamily: {
-        'sans': ['Inter', 'sans-serif'],
-        'serif': ['"Playfair Display"', 'serif'],
+        'sans': ['CasagrandeCasabau', 'sans-serif'],
+        'serif': ['CasagrandeCasabau', 'sans-serif'],
       },
       transitionTimingFunction: {
         'in-out-circ': 'cubic-bezier(0.87, 0, 0.13, 1)',

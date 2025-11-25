@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fuente personalizada CasagrandeCasabau */
+@font-face {
+  font-family: 'CasagrandeCasabau';
+  src: url('/font/CasagrandeCasabau-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* Reset y estilos base */
 * {
   margin: 0;
@@ -14,7 +23,7 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'CasagrandeCasabau', sans-serif;
   line-height: 1.6;
   color: #121212;
   background-color: #f2f2f1;
