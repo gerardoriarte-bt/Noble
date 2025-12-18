@@ -2,16 +2,17 @@ import React, { useEffect, useRef } from 'react';
 import { motion, useInView, useMotionValue, useTransform, animate } from 'framer-motion';
 
 const metricsData = [
-  { value: 20, label: 'Years of Experience', suffix: '+' },
-  { value: 150, label: 'Projects Completed', suffix: '+' },
-  { value: 500, label: 'Thousand Sq. Ft. Designed', suffix: 'K' },
-  { value: 25, label: 'International Awards', suffix: '' },
+  { value: 20, label: 'Años de Experiencia', prefix: '+' },
+  { value: 17, label: 'Proyectos y en Proceso', prefix: '+' },
+  { value: 229000, label: 'MM Ventas', prefix: '+' },
+  { value: 50000, label: 'm² como Gerencia de Interventoría y Supervisión Técnica', prefix: '+' },
+  { value: 425, label: 'Apartamentos Residenciales y en Desarrollo', prefix: '+' },
 ];
 
 const AnimatedNumber: React.FC<{ value: number }> = ({ value }) => {
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) =>
-    Math.round(latest).toLocaleString()
+    Math.round(latest).toLocaleString('es-ES')
   );
 
   useEffect(() => {
@@ -39,19 +40,19 @@ const Metrics: React.FC = () => {
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <h2 className="text-3xl md:text-4xl font-bold uppercase tracking-widest text-noir">
-            By The Numbers
+            En Números
           </h2>
           <p className="text-noir/60 mt-2 max-w-2xl mx-auto">
-            Our legacy is built on a foundation of tangible results and
-            architectural excellence.
+            Nuestro legado se basa en una base de resultados tangibles y
+            excelencia arquitectónica.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center gap-12 md:gap-16">
           {metricsData.map((metric, index) => (
             <motion.div
               key={metric.label}
-              className="text-center"
+              className="text-center w-full sm:w-[calc(50%-2rem)] md:w-[calc(33.33%-3rem)]"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
@@ -60,11 +61,11 @@ const Metrics: React.FC = () => {
                 ease: 'easeOut',
               }}
             >
-              <p className="text-5xl md:text-7xl font-serif text-camel">
+              <p className="text-4xl md:text-5xl lg:text-6xl font-serif text-camel whitespace-nowrap">
+                {metric.prefix}
                 {isInView && <AnimatedNumber value={metric.value} />}
-                {metric.suffix}
               </p>
-              <h3 className="mt-3 text-sm uppercase tracking-wider text-noir/70">
+              <h3 className="mt-3 text-xs md:text-sm uppercase tracking-wider text-noir/70 max-w-[200px] mx-auto leading-relaxed">
                 {metric.label}
               </h3>
             </motion.div>

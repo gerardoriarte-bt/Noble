@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ProjectModal from './ProjectModal';
 
 // ============================================================================
 // [INTERFACE] TimelineItem - Estructura de datos para cada proyecto
@@ -9,7 +10,12 @@ interface TimelineItem {
   title: string;
   description: string;
   image: string;
+  verticalImage?: string;
+  horizontalImage?: string;
   location: string;
+  detailedDescription?: string;
+  gallery?: string[];
+  specifications?: string[];
 }
 
 // ============================================================================
@@ -17,34 +23,151 @@ interface TimelineItem {
 // ============================================================================
 const timelineData: TimelineItem[] = [
   {
-    year: 2025,
-    title: "Baltique",
-    description: "EDIFICIO DE 13 PISOS | 165 APARTAMENTOS | 1 Y 2 HAB. DE 50 M2 A 105 M2",
-    image: "IMG/Baltique.jpg",
-    location: "DESARROLLO - GERENCIA - DISEÑO - CONSTRUCCIÓN - OPERACIÓN TURÍSTICA"
-  },
-  {
-    year: 2024,
-    title: "Matinique",
-    description: "| EDIFICIO DE 15 PISOS | 99 APARTAMENTOS | 1 Y 2 HAB. DE 65 M2 A 110 M2",
-    image: "/IMG/martinique.jpg",
-    location: "DESARROLLO - GERENCIA - DISEÑO - CONSTRUCCIÓN - OPERACIÓN TURÍSTICA"
-  },
-  {
-    year: 2025,
+    year: 2022,
     title: "Dominique",
-    description: "Expanded into commercial architecture with award-winning office spaces.",
-    image: "/IMG/Dominique.jpg",
-    location: "Monterrey"
+    description: "Estratégicamente ubicado en el barrio Cielomar, a solo 200 metros de la mejor y más exclusiva playa de la zona norte.",
+    image: "/Proyectos/DOMINIQUE/main.png",
+    horizontalImage: "/Proyectos/DOMINIQUE/image00013.jpeg",
+    location: "Cartagena de Indias",
+    detailedDescription: "Estratégicamente ubicado en el barrio Cielomar, Dominique está a solo 200 metros de la mejor y más exclusiva playa de la zona norte, contigua al hotel Las Américas, y en el corazón de la recuperada ciénaga de la virgen.",
+    gallery: [
+      "/Proyectos/DOMINIQUE/image00002.png",
+      "/Proyectos/DOMINIQUE/image00005.jpeg",
+      "/Proyectos/DOMINIQUE/image00008.jpeg",
+      "/Proyectos/DOMINIQUE/image00010.jpeg",
+      "/Proyectos/DOMINIQUE/image00011.jpeg",
+      "/Proyectos/DOMINIQUE/image00012.jpeg",
+      "/Proyectos/DOMINIQUE/image00013.jpeg",
+      "/Proyectos/DOMINIQUE/image00085.jpeg",
+      "/Proyectos/DOMINIQUE/image00173.jpeg",
+      "/Proyectos/DOMINIQUE/image00175.jpeg",
+      "/Proyectos/DOMINIQUE/PHOTO-2023-05-09-09-12-13.jpg"
+    ],
+    specifications: [
+      "Edificio de 14 pisos",
+      "120 apartamentos",
+      "1 y 2 habitaciones entre 62 m² hasta 110 m²",
+      "105 estacionamientos privados",
+      "17 de visitantes",
+      "3 ascensores"
+    ]
   },
   {
-    year: 2021,
-    title: "La Serrezuela",
-    description: "Designed our first cultural institution, blending tradition with modernity.",
-    image: "/IMG/La-Serrezuela.jpg",
-    location: "Oaxaca"
+    year: 2019,
+    title: "Martinique",
+    description: "Estratégicamente ubicado en el barrio Cielomar, a solo 200 metros de la mejor y más exclusiva playa de la zona norte.",
+    image: "/Proyectos/MARTINIQUE/main.jpeg",
+    horizontalImage: "/Proyectos/MARTINIQUE/IMG_70552.jpg",
+    location: "Cartagena de Indias",
+    detailedDescription: "Estratégicamente ubicado en el barrio Cielomar, Martinique está a solo 200 metros de la mejor y más exclusiva playa de la zona norte, contigua al hotel Las Américas, y en el corazón de la recuperada ciénaga de la virgen.",
+    gallery: [
+      "/Proyectos/MARTINIQUE/image00002.jpeg",
+      "/Proyectos/MARTINIQUE/image00030.jpeg",
+      "/Proyectos/MARTINIQUE/image00044.jpeg",
+      "/Proyectos/MARTINIQUE/image00045.jpeg",
+      "/Proyectos/MARTINIQUE/IMG_0006.JPG",
+      "/Proyectos/MARTINIQUE/IMG_7042.jpeg",
+      "/Proyectos/MARTINIQUE/IMG_70552.jpg",
+      "/Proyectos/MARTINIQUE/Jacuzzi Foto.jpg"
+    ],
+    specifications: [
+      "Edificio de 15 pisos",
+      "99 apartamentos",
+      "1 y 2 habitaciones entre 65 m² hasta 110 m²",
+      "105 estacionamientos privados",
+      "17 de visitantes",
+      "3 ascensores"
+    ]
   },
-  
+  {
+    year: 2020,
+    title: "Antique",
+    description: "Ya no tienes que salir de la ciudad para encontrar comodidad y poder disfrutar de zonas verdes. El proyecto Antique traerá la calidad de vida que tú y tu familia estaban buscando.",
+    image: "/Proyectos/ANTIQUE/horizontal.png",
+    verticalImage: "/Proyectos/ANTIQUE/main.png",
+    location: "Bogotá",
+    detailedDescription: "ANTIQUE es un proyecto de vivienda con 36 unidades de apartamentos en 5 pisos de altura que ofrece una excelente ubicación en un sector residencial consolidado de la ciudad de Bogotá. El proyecto es el marco y fondo de un agradable y reservado parque que ofrece una ventaja única para sus propietarios y habitantes ya que cuenta con una zona verde a lo ancho del proyecto.\n\nEstructuración, Diseño, Promoción, Gerencia y Construcción Edificio de Apartamentos Antique en Bogotá, Colombia. Desarrollo propio en consorcio con CLV Arquitectura y Construcción y Mas Ingeniería SC. Fiduciaria Fidubogotá y crédito constructor Banco de Bogotá. Proyecto de 7200m² de construcción, COP 22,000 millones en ventas, 40 apartamentos y 5 pisos de altura en el barrio Nuevo Country (sector Antigua). Proyecto culminado exitosamente.",
+    gallery: [
+      "/Proyectos/ANTIQUE/main.png",
+      "/Proyectos/ANTIQUE/horizontal.png",
+      "/Proyectos/ANTIQUE/vertical.png",
+      "/Proyectos/ANTIQUE/Captura%20de%20pantalla%202025-12-11%20223509.png",
+      "/Proyectos/ANTIQUE/Captura%20de%20pantalla%202025-12-11%20223524.png"
+    ],
+    specifications: [
+      "Edificio de 5 pisos",
+      "40 apartamentos",
+      "7200 m² de construcción",
+      "Barrio Nuevo Country (sector Antigua)",
+      "Zona verde a lo ancho del proyecto",
+      "Sector residencial consolidado"
+    ]
+  },
+  {
+    year: 2023,
+    title: "Baruq",
+    description: "Proyecto único de 360 unidades, 3 edificios, cada uno de 5 pisos más altillo. Un proyecto que se desarrollará en 3 etapas de venta.",
+    image: "/Proyectos/BARUQ/main.jpg",
+    verticalImage: "/Proyectos/BARUQ/1.6.jpg",
+    location: "Cartagena",
+    detailedDescription: "Proyecto único de 360 unidades, 3 edificios, cada uno de 5 pisos más altillo. Un proyecto que se desarrollará en 3 etapas de venta. Iniciando con 120 unidades en la primera etapa, cada etapa para uso residencial y turístico.\n\nSOSTENIBLE: Construcción consciente con el entorno.\n\nINVERSIÓN INTELIGENTE: Diseñado para maximizar la inversión, con un modelo mixto de rentabilidad y experiencia.\n\nEXPERIENCIA: La localización garantiza el mejor spot marino del caribe colombiano. Ubicado en la milla de oro de Barú.\n\nÚNICO: Único proyecto de villas hoteleras o turística en Cartagena.\n\nLUJO: Diseño original de la reconocida firma Duque Martínez, mezclando el ambiente de la playa costera con el paisaje caribeño.",
+    gallery: [
+      "/Proyectos/BARUQ/main.jpg",
+      "/Proyectos/BARUQ/1.3.jpg",
+      "/Proyectos/BARUQ/1.6.jpg",
+      "/Proyectos/BARUQ/A1.png",
+      "/Proyectos/BARUQ/C.png"
+    ],
+    specifications: [
+      "Estructura: 5 pisos + altillo",
+      "Área lote: 3.3 hectáreas",
+      "Área vendible: 19.800 m²",
+      "Áreas comunes: 1.200 m²",
+      "Unidades residenciales: 320 unidades",
+      "360 unidades totales",
+      "3 edificios",
+      "3 etapas de venta"
+    ]
+  },
+  {
+    year: 2019,
+    title: "Emaus",
+    description: "Diseño, gerencia y construcción Parroquia Discípulos de Emaús en Bogotá, Colombia.",
+    image: "/Proyectos/EMAUS/main.jpg",
+    location: "Bogotá",
+    detailedDescription: "Diseño, gerencia y construcción Parroquia Discípulos de Emaús en Bogotá, Colombia. Diseño, construcción y gerencia de proyecto para las facilidades parroquiales de 1500m² incluyendo el espacio de congregación. Proyecto culminado exitosamente.",
+    gallery: [
+      "/Proyectos/EMAUS/main.jpg"
+    ],
+    specifications: [
+      "1500 m² de facilidades parroquiales",
+      "Espacio de congregación",
+      "Diseño, construcción y gerencia",
+      "Proyecto culminado exitosamente"
+    ]
+  },
+  {
+    year: 2019,
+    title: "Serrezuela",
+    description: "Centro comercial de lujo con arquitectura grandiosa que remite a una parte importante de la historia colombiana.",
+    image: "/Proyectos/SERREZUELA/FOT3.jpg",
+    horizontalImage: "/Proyectos/SERREZUELA/main.jpg",
+    location: "Cartagena de Indias",
+    detailedDescription: "El centro comercial de lujo Plaza La Serrezuela es imponente: la construcción de una arquitectura grandiosa, que remite a una parte importante de la historia colombiana, suma 22.400 m2 de área construida, de los cuales más de 10.000 m2 se configuran como ABA. Esta división se debe a que, además de ser un lujoso centro comercial, el emprendimiento también alberga un centro cultural y un centro de convenciones. Todo esto en el corazón de Cartagena.",
+    gallery: [
+      "/Proyectos/SERREZUELA/main.jpg",
+      "/Proyectos/SERREZUELA/FOT2.jpg",
+      "/Proyectos/SERREZUELA/FOT3.jpg"
+    ],
+    specifications: [
+      "22.000 m² de área total",
+      "22.400 m² de área construida",
+      "Más de 10.000 m² de ABA",
+      "Centro comercial de lujo",
+      "Centro cultural",
+      "Centro de convenciones"
+    ]
+  },
 ];
 
 // ============================================================================
@@ -55,17 +178,20 @@ const HorizontalTimeline: React.FC = () => {
   // [REFs] Referencias a los elementos DOM del carrusel
   // ========================================================================
   const scrollRef = useRef<HTMLDivElement>(null); // Carrusel horizontal desktop
-  const scrollRefMobile = useRef<HTMLDivElement>(null); // Carrusel horizontal mobile
   const leftScrollRef = useRef<HTMLDivElement>(null); // Contenedor scroll vertical izquierdo
   const leftCarouselRef = useRef<HTMLDivElement>(null); // Carrusel vertical izquierdo
   const itemRefs = useRef<(HTMLDivElement | null)[]>([]); // Referencias a cada item del carrusel
-  
+  const mobileCarouselRef = useRef<HTMLDivElement>(null); // Carrusel horizontal mobile
+  const [mobileCarouselIndex, setMobileCarouselIndex] = useState(0); // Índice del carrusel mobile
+
   // ========================================================================
   // [STATE] Estado del componente
   // ========================================================================
   const [activeIndex, setActiveIndex] = useState(0); // Índice del proyecto activo
   const prevActiveIndexRef = useRef(activeIndex); // Índice anterior para comparaciones
   const isSyncingRef = useRef(false); // Bandera para evitar loops durante sincronización
+  const [selectedProject, setSelectedProject] = useState<TimelineItem | null>(null); // Proyecto seleccionado para el modal
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado del modal
 
   // Intersection Observer deshabilitado - usando solo scroll handlers para mejor control
   // El Intersection Observer puede interferir con la sincronización manual
@@ -77,16 +203,16 @@ const HorizontalTimeline: React.FC = () => {
     if (isSyncingRef.current) {
       return;
     }
-    
-    // Intentar con el ref de desktop primero, luego mobile
-    const scrollElement = scrollRef.current || scrollRefMobile.current;
-    
+
+    // Usar el ref de desktop
+    const scrollElement = scrollRef.current;
+
     if (scrollElement) {
       const scrollLeft = scrollElement.scrollLeft;
       const containerWidth = scrollElement.clientWidth;
-      
+
       if (containerWidth === 0) return; // No hacer nada si el ancho es 0
-      
+
       // Calcular el índice basado en la posición del scroll
       // Cada imagen ocupa 80vw del viewport (reducido para menos scroll)
       const GAP_SIZE = 2; // Separación fija en píxeles (no depende del tamaño de ventana)
@@ -95,21 +221,11 @@ const HorizontalTimeline: React.FC = () => {
       const itemWidthWithGap = itemWidth + GAP_SIZE; // Cada imagen + separación
       const rawIndex = scrollLeft / itemWidthWithGap;
       let newIndex = Math.round(rawIndex);
-      
+
       // Asegurar que el índice esté dentro de los límites válidos
       newIndex = Math.max(0, Math.min(newIndex, timelineData.length - 1));
-      
-      console.log('Scroll horizontal:', {
-        scrollLeft,
-        containerWidth,
-        rawIndex,
-        newIndex,
-        activeIndex,
-        totalProjects: timelineData.length
-      });
-      
+
       if (newIndex !== activeIndex && newIndex >= 0 && newIndex < timelineData.length) {
-        console.log('Actualizando índice horizontal:', activeIndex, '->', newIndex);
         setActiveIndex(newIndex);
       }
     }
@@ -122,57 +238,40 @@ const HorizontalTimeline: React.FC = () => {
     if (isSyncingRef.current) {
       return;
     }
-    
+
     if (leftScrollRef.current) {
       const scrollTop = leftScrollRef.current.scrollTop;
       const containerHeight = leftScrollRef.current.clientHeight;
-      
+
       if (containerHeight === 0) return; // No hacer nada si la altura es 0
-      
+
       // Calcular el índice basado en la posición del scroll
       // Cada proyecto ocupa containerHeight (100vh), así que dividimos scrollTop por containerHeight
       const rawIndex = scrollTop / containerHeight;
       let newIndex = Math.round(rawIndex);
-      
+
       // Asegurar que el índice esté dentro de los límites válidos
       newIndex = Math.max(0, Math.min(newIndex, timelineData.length - 1));
-      
-      console.log('Scroll vertical:', {
-        scrollTop,
-        containerHeight,
-        rawIndex,
-        newIndex,
-        activeIndex,
-        totalProjects: timelineData.length
-      });
-      
+
       if (newIndex !== activeIndex && newIndex >= 0 && newIndex < timelineData.length) {
-        console.log('Actualizando índice vertical:', activeIndex, '->', newIndex);
         setActiveIndex(newIndex);
       }
     }
   }, [activeIndex]);
 
   // ========================================================================
-  // [EFFECT] useEffect - Agrega listeners de scroll horizontal (Desktop y Mobile)
+  // [EFFECT] useEffect - Agrega listeners de scroll horizontal (Desktop)
   // ========================================================================
   useEffect(() => {
     const scrollElementDesktop = scrollRef.current;
-    const scrollElementMobile = scrollRefMobile.current;
-    
+
     if (scrollElementDesktop) {
       scrollElementDesktop.addEventListener('scroll', handleHorizontalScroll, { passive: true });
     }
-    if (scrollElementMobile) {
-      scrollElementMobile.addEventListener('scroll', handleHorizontalScroll, { passive: true });
-    }
-    
+
     return () => {
       if (scrollElementDesktop) {
         scrollElementDesktop.removeEventListener('scroll', handleHorizontalScroll);
-      }
-      if (scrollElementMobile) {
-        scrollElementMobile.removeEventListener('scroll', handleHorizontalScroll);
       }
     };
   }, [handleHorizontalScroll]);
@@ -196,40 +295,32 @@ const HorizontalTimeline: React.FC = () => {
   useEffect(() => {
     if (prevActiveIndexRef.current !== activeIndex) {
       prevActiveIndexRef.current = activeIndex;
-      
+
       // Activar bandera de sincronización
       isSyncingRef.current = true;
-      
+
       // Sincronizar el carrusel vertical de la izquierda
       if (leftScrollRef.current) {
         const containerHeight = leftScrollRef.current.clientHeight;
         const scrollHeight = leftScrollRef.current.scrollHeight;
         const maxScrollTop = scrollHeight - containerHeight;
-        
+
         // Calcular la posición de scroll para el proyecto activo
         let expectedScrollTop = activeIndex * containerHeight;
-        
+
         // Asegurar que no exceda el scroll máximo
         expectedScrollTop = Math.min(expectedScrollTop, maxScrollTop);
-        
+
         // Asegurar que sea al menos 0
         expectedScrollTop = Math.max(0, expectedScrollTop);
-        
-        console.log('Sincronizando scroll vertical:', {
-          activeIndex,
-          containerHeight,
-          scrollHeight,
-          maxScrollTop,
-          expectedScrollTop,
-          currentScrollTop: leftScrollRef.current.scrollTop
-        });
-        
+
+
         leftScrollRef.current.scrollTo({
           top: expectedScrollTop,
           behavior: 'smooth'
         });
       }
-      
+
       // Sincronizar el carrusel horizontal de la derecha (desktop y mobile)
       const syncHorizontalScroll = (element: HTMLDivElement | null) => {
         if (element) {
@@ -237,7 +328,7 @@ const HorizontalTimeline: React.FC = () => {
           if (containerWidth > 0) {
             const scrollWidth = element.scrollWidth;
             const maxScrollLeft = scrollWidth - containerWidth;
-            
+
             // Calcular la posición de scroll para el proyecto activo
             // Cada imagen ocupa 80vw del viewport (reducido para menos scroll)
             const GAP_SIZE = 2; // Separación fija en píxeles
@@ -246,22 +337,14 @@ const HorizontalTimeline: React.FC = () => {
             const itemWidthWithGap = itemWidth + GAP_SIZE; // Cada imagen + separación
             // Posición de inicio de cada imagen: índice * (ancho de imagen + separación)
             let expectedScrollLeft = activeIndex * itemWidthWithGap;
-            
+
             // Asegurar que no exceda el scroll máximo
             expectedScrollLeft = Math.min(expectedScrollLeft, maxScrollLeft);
-            
+
             // Asegurar que sea al menos 0
             expectedScrollLeft = Math.max(0, expectedScrollLeft);
-            
-            console.log('Sincronizando scroll horizontal:', {
-              activeIndex,
-              containerWidth,
-              scrollWidth,
-              maxScrollLeft,
-              expectedScrollLeft,
-              currentScrollLeft: element.scrollLeft
-            });
-            
+
+
             element.scrollTo({
               left: expectedScrollLeft,
               behavior: 'smooth'
@@ -274,7 +357,7 @@ const HorizontalTimeline: React.FC = () => {
                 if (retryWidth > 0) {
                   const scrollWidth = element.scrollWidth;
                   const maxScrollLeft = scrollWidth - retryWidth;
-                  
+
                   const GAP_SIZE = 2; // Separación fija en píxeles
                   const retryViewportWidth = window.innerWidth; // Ancho completo del viewport
                   const retryItemWidth = retryViewportWidth * 0.8; // Cada imagen ocupa 80vw
@@ -283,7 +366,7 @@ const HorizontalTimeline: React.FC = () => {
                   let expectedScrollLeft = activeIndex * retryItemWidthWithGap;
                   expectedScrollLeft = Math.min(expectedScrollLeft, maxScrollLeft);
                   expectedScrollLeft = Math.max(0, expectedScrollLeft);
-                  
+
                   element.scrollTo({
                     left: expectedScrollLeft,
                     behavior: 'smooth'
@@ -294,10 +377,9 @@ const HorizontalTimeline: React.FC = () => {
           }
         }
       };
-      
+
       syncHorizontalScroll(scrollRef.current);
-      syncHorizontalScroll(scrollRefMobile.current);
-      
+
       // Desactivar bandera después de un breve delay
       setTimeout(() => {
         isSyncingRef.current = false;
@@ -306,23 +388,40 @@ const HorizontalTimeline: React.FC = () => {
   }, [activeIndex]);
 
   // ========================================================================
-  // [VARIABLE] activeProject - Proyecto activo actual
+
   // ========================================================================
-  const activeProject = timelineData[activeIndex] || timelineData[0];
+  // [HANDLER] handleOpenModal - Abre el modal con el proyecto seleccionado
+  // ========================================================================
+  const handleOpenModal = (project: TimelineItem) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+    // Prevenir scroll del body cuando el modal está abierto
+    document.body.style.overflow = 'hidden';
+  };
+
+  // ========================================================================
+  // [HANDLER] handleCloseModal - Cierra el modal
+  // ========================================================================
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+    setSelectedProject(null);
+    // Restaurar scroll del body
+    document.body.style.overflow = 'unset';
+  };
 
   // ============================================================================
   // [RENDER] JSX Principal
   // ============================================================================
   return (
-    <section className="h-screen bg-cloud flex overflow-hidden" style={{ height: '80vh', maxHeight: '80vh' }}>
+    <section id="proyectos" className="h-screen bg-cloud md:flex md:overflow-hidden" style={{ height: '80vh', maxHeight: '80vh' }}>
       {/* ======================================================================
           [COMPONENTE] Sección izquierda - Carrusel vertical de proyectos completos (1/3 del ancho)
           ====================================================================== */}
-      <div 
+      <div
         ref={leftScrollRef}
-        className="left-scroll-section w-full md:w-1/3 bg-cloud border-r border-noir/5 overflow-y-auto overflow-x-hidden"
-        style={{ 
-          height: '100vh', 
+        className="left-scroll-section hidden md:block w-full md:w-1/3 bg-cloud border-r border-noir/5 overflow-y-auto overflow-x-hidden"
+        style={{
+          height: '100vh',
           maxHeight: '100vh',
           padding: '20px',
           scrollbarWidth: 'thin',
@@ -332,7 +431,7 @@ const HorizontalTimeline: React.FC = () => {
         {/* ======================================================================
             [COMPONENTE] leftCarouselRef - Contenedor interno del carrusel vertical
             ====================================================================== */}
-        <div 
+        <div
           ref={leftCarouselRef}
           className="flex flex-col"
           style={{ minHeight: '80%' }}
@@ -342,18 +441,15 @@ const HorizontalTimeline: React.FC = () => {
               ====================================================================== */}
           {timelineData.map((item, index) => (
             <div
-              key={item.year}
+              key={`${item.year}-${index}`}
               className="flex-shrink-0 w-full"
-              style={{ 
-                height: '100vh',
+              style={{
                 minHeight: '100vh',
-                maxHeight: '100vh',
                 padding: '1rem 0.5rem 1rem 0',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'flex-start',
-                boxSizing: 'border-box',
-                overflow: 'hidden'
+                boxSizing: 'border-box'
               }}
             >
               {/* ==================================================================
@@ -368,7 +464,7 @@ const HorizontalTimeline: React.FC = () => {
                   className="mb-8"
                 >
                   <h3 className="text-sm uppercase tracking-widest text-noir/60 font-light">
-                    Our Journey Through Time
+                    Proyectos
                   </h3>
                 </motion.div>
               )}
@@ -378,14 +474,14 @@ const HorizontalTimeline: React.FC = () => {
                   ================================================================== */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ 
+                animate={{
                   opacity: index === activeIndex ? 1 : 0.6,
                   scale: index === activeIndex ? 1 : 0.98
                 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
                 // @ts-ignore
                 className="mb-6"
-                style={{ 
+                style={{
                   height: '40vh',
                   width: '100%',
                   minHeight: '40vh',
@@ -400,9 +496,9 @@ const HorizontalTimeline: React.FC = () => {
                 }}
               >
                 <img
-                  src={item.image}
-                  alt={item.title}
-                  style={{ 
+                  src={item.verticalImage || item.image}
+                  alt={`Proyecto ${item.title} - ${item.location} - ${item.year} | Noble Architecture Studio`}
+                  style={{
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
@@ -419,45 +515,50 @@ const HorizontalTimeline: React.FC = () => {
               {/* ==================================================================
                   [COMPONENTE] Contenido del proyecto - Información textual del proyecto
                   ================================================================== */}
-              <div className="flex-1 flex flex-col" style={{ minHeight: 0, overflow: 'hidden' }}>
+              <div className="flex-1 flex flex-col" style={{ minHeight: 0 }}>
                 {/* [SUB-COMPONENTE] Título del proyecto */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
+                  animate={{
                     opacity: index === activeIndex ? 1 : 0.7,
                     y: 0
                   }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                   // @ts-ignore
-                  className="mb-3"
-                  style={{ flexShrink: 0 }}
-                >
-                  <h2 className="text-3xl md:text-4xl font-serif text-noir font-light mb-2">
-                    {item.title}
-                  </h2>
-                </motion.div>
-
-                {/* [SUB-COMPONENTE] Año grande del proyecto */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
-                    opacity: index === activeIndex ? 1 : 0.7,
-                    y: 0
-                  }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  // @ts-ignore
                   className="mb-4"
                   style={{ flexShrink: 0 }}
                 >
-                  <h2 className="text-5xl md:text-6xl font-serif text-noir font-light">
-                    {item.year}
+                  <h2 className="text-3xl md:text-4xl font-serif text-noir font-light mb-3">
+                    {item.title}
                   </h2>
+                  
+                  {/* [SUB-COMPONENTE] Botón para abrir modal - Debajo del título */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{
+                      opacity: 1,
+                      y: 0
+                    }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    style={{ flexShrink: 0 }}
+                  >
+                    <button
+                      onClick={() => handleOpenModal(item)}
+                      className="w-full py-3 px-4 border-2 border-noir/50 hover:border-noir bg-noir/15 hover:bg-noir/25 text-noir font-medium transition-all duration-300 text-sm uppercase tracking-widest shadow-md"
+                      style={{ 
+                        backgroundColor: 'rgba(18, 18, 18, 0.1)',
+                        cursor: 'pointer'
+                      }}
+                    >
+                      Ver Detalles
+                    </button>
+                  </motion.div>
                 </motion.div>
 
                 {/* [SUB-COMPONENTE] Descripción del proyecto */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
+                  animate={{
                     opacity: index === activeIndex ? 1 : 0.7,
                     y: 0
                   }}
@@ -474,7 +575,7 @@ const HorizontalTimeline: React.FC = () => {
                 {/* [SUB-COMPONENTE] Separador horizontal decorativo */}
                 <motion.div
                   initial={{ opacity: 0 }}
-                  animate={{ 
+                  animate={{
                     opacity: index === activeIndex ? 1 : 0.5
                   }}
                   transition={{ duration: 0.6, delay: 0.4 }}
@@ -486,7 +587,7 @@ const HorizontalTimeline: React.FC = () => {
                 {/* [SUB-COMPONENTE] Servicios/Ubicación del proyecto */}
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ 
+                  animate={{
                     opacity: index === activeIndex ? 1 : 0.7,
                     y: 0
                   }}
@@ -512,7 +613,7 @@ const HorizontalTimeline: React.FC = () => {
                     href="#"
                     className="text-sm text-noir/60 hover:text-noir transition-colors underline underline-offset-4"
                   >
-                    Learn More About Us
+                    Conoce Más Sobre Nosotros
                   </a>
                 </motion.div>
               )}
@@ -540,20 +641,20 @@ const HorizontalTimeline: React.FC = () => {
           }}
         >
           {/* [SUB-COMPONENTE] Contenedor flex interno con ancho calculado */}
-          <div 
-            className="flex" 
-            style={{ 
-              width: `calc(${timelineData.length * 80}vw + ${(timelineData.length - 1) * 2}px)`, 
+          <div
+            className="flex"
+            style={{
+              width: `calc(${timelineData.length * 80}vw + ${(timelineData.length - 1) * 2}px)`,
               height: '100vh'
             }}
           >
             {/* [LOOP] Mapeo de imágenes del carrusel horizontal */}
             {timelineData.map((item, index) => (
-              <React.Fragment key={item.year}>
+              <React.Fragment key={`${item.year}-${index}`}>
                 {/* [COMPONENTE] Espaciador entre imágenes (solo después de la primera) */}
                 {index > 0 && (
-                  <div 
-                    className="flex-shrink-0" 
+                  <div
+                    className="flex-shrink-0"
                     style={{ width: '2px', height: '100vh' }}
                   />
                 )}
@@ -563,8 +664,8 @@ const HorizontalTimeline: React.FC = () => {
                     itemRefs.current[index] = el;
                   }}
                   className="flex-shrink-0 relative"
-                  style={{ 
-                    height: '100vh', 
+                  style={{
+                    height: '100vh',
                     maxHeight: '100vh',
                     width: '80vw',
                     boxSizing: 'content-box',
@@ -575,11 +676,11 @@ const HorizontalTimeline: React.FC = () => {
                   {/* [SUB-COMPONENTE] Contenedor con marco minimalista y espacio alrededor */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     {/* [SUB-COMPONENTE] Marco con fondo semitransparente */}
-                    <div className="w-full h-full bg-cloud/90 flex items-center justify-center p-0">
+                    <div className="w-full h-full bg-cloud/90 flex items-center justify-center p-0 relative group">
                       {/* [ELEMENTO] Imagen del proyecto */}
                       <img
-                        src={item.image}
-                        alt={item.title}
+                        src={item.horizontalImage || item.image}
+                        alt={`Proyecto ${item.title} - ${item.location} - ${item.year} | Noble Architecture Studio`}
                         className="w-full h-full object-contain"
                         style={{
                           filter: 'brightness(1) contrast(1.05)',
@@ -587,6 +688,19 @@ const HorizontalTimeline: React.FC = () => {
                           maxHeight: '100%'
                         }}
                       />
+                      {/* [ELEMENTO] Botón flotante para abrir modal */}
+                      <div className="absolute bottom-6 right-6 z-20">
+                        <button
+                          onClick={() => handleOpenModal(item)}
+                          className="bg-noir hover:bg-noir/90 text-cloud px-6 py-3 text-sm uppercase tracking-widest font-light transition-all duration-300 shadow-lg"
+                          style={{
+                            backgroundColor: 'rgba(18, 18, 18, 0.9)',
+                            cursor: 'pointer'
+                          }}
+                        >
+                          Ver Detalles
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -597,79 +711,148 @@ const HorizontalTimeline: React.FC = () => {
       </div>
 
       {/* ======================================================================
-          [COMPONENTE] Versión mobile - Layout apilado - Solo Mobile
+          [COMPONENTE] Versión mobile - Cards simplificadas - Solo Mobile
           ====================================================================== */}
-      <div className="md:hidden w-full overflow-y-auto" style={{ height: '100vh', maxHeight: '100vh' }}>
-        {/* [COMPONENTE] Información del proyecto activo - Solo mobile */}
-        {activeProject && (
-          <div className="p-6 mb-6">
-            <h3 className="text-sm uppercase tracking-widest text-noir/60 font-light mb-6">
-              Our Journey Through Time
-            </h3>
-            <h2 className="text-4xl font-serif text-noir font-light mb-4">
-              {activeProject.year}
-            </h2>
-            <p className="text-base text-noir/70 leading-relaxed font-light mb-4">
-              {activeProject.description}
-            </p>
-          </div>
-        )}
+      <div className="md:hidden w-full bg-cloud py-8">
+        {/* [COMPONENTE] Título de sección */}
+        <div className="px-6 mb-8">
+          <motion.h3
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-sm uppercase tracking-widest text-noir/60 font-light mb-2"
+          >
+            Proyectos
+          </motion.h3>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-16 h-px bg-noir/20 mt-2"
+            style={{ transformOrigin: 'left' }}
+          />
+        </div>
 
-        {/* [COMPONENTE] scrollRefMobile - Carrusel horizontal mobile */}
+        {/* [COMPONENTE] Carrusel horizontal de cards */}
         <div
-          ref={scrollRefMobile}
-          className="flex overflow-x-auto overflow-y-hidden"
+          ref={mobileCarouselRef}
+          className="overflow-x-auto overflow-y-visible"
           style={{
-            height: '50vh',
-            maxHeight: '50vh',
+            scrollSnapType: 'x mandatory',
+            scrollBehavior: 'smooth',
             scrollbarWidth: 'none',
-            msOverflowStyle: 'none'
+            msOverflowStyle: 'none',
+            WebkitOverflowScrolling: 'touch',
+            WebkitScrollbar: { display: 'none' }
+          }}
+          onScroll={(e) => {
+            const container = e.currentTarget;
+            const scrollLeft = container.scrollLeft;
+            const cardWidth = container.clientWidth;
+            const newIndex = Math.round(scrollLeft / cardWidth);
+            if (newIndex !== mobileCarouselIndex && newIndex >= 0 && newIndex < timelineData.length) {
+              setMobileCarouselIndex(newIndex);
+            }
           }}
         >
-          {/* [SUB-COMPONENTE] Contenedor flex del carrusel mobile */}
-          <div className="flex" style={{ width: `${timelineData.length * 100}vw`, height: '50vh' }}>
-            {/* [LOOP] Mapeo de imágenes del carrusel mobile */}
-            {timelineData.map((item) => (
+          <div className="flex" style={{ width: `${timelineData.length * 100}vw` }}>
+            {timelineData.map((item, index) => (
               <div
-                key={item.year}
-                className="flex-shrink-0 w-screen relative"
-                style={{ height: '50vh', maxHeight: '50vh' }}
+                key={`${item.year}-${index}`}
+                className="flex-shrink-0"
+                style={{ 
+                  width: '100vw',
+                  scrollSnapAlign: 'start',
+                  paddingLeft: '1rem',
+                  paddingRight: '1rem',
+                  boxSizing: 'border-box'
+                }}
               >
-                <div className="w-full h-full flex items-center justify-center p-1">
-                  <div className="w-full h-full bg-cloud/90 flex items-center justify-center p-1">
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  className="bg-cloud border border-noir/10 rounded-sm overflow-hidden shadow-sm"
+                >
+                  {/* [SUB-COMPONENTE] Imagen del proyecto */}
+                  <div className="relative w-full" style={{ height: '45vh', minHeight: '280px' }}>
                     <img
                       src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-contain"
-                      style={{
-                        maxWidth: '100%',
-                        maxHeight: '100%'
-                      }}
+                      alt={`Proyecto ${item.title} - ${item.location} - ${item.year} | Noble Architecture Studio`}
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                </div>
+
+                  {/* [SUB-COMPONENTE] Contenido de la card */}
+                  <div className="p-6">
+                    {/* [SUB-COMPONENTE] Título, año y ubicación */}
+                    <div className="mb-4">
+                      <div className="flex items-center justify-between mb-2">
+                        <h4 className="text-2xl font-serif text-noir font-light">
+                          {item.title}
+                        </h4>
+                        <span className="text-xs text-noir/60 font-light tracking-wider">
+                          {item.year}
+                        </span>
+                      </div>
+                      <p className="text-sm text-noir/60 uppercase tracking-widest font-light">
+                        {item.location}
+                      </p>
+                    </div>
+
+                    {/* [SUB-COMPONENTE] Descripción breve */}
+                    <p className="text-base text-noir/70 leading-relaxed font-light mb-6">
+                      {item.description}
+                    </p>
+
+                    {/* [ELEMENTO] Botón para abrir modal */}
+                    <button
+                      onClick={() => handleOpenModal(item)}
+                      className="w-full py-3 px-4 border-2 border-noir/30 hover:border-noir bg-noir/5 hover:bg-noir/10 text-noir transition-all duration-300 text-sm uppercase tracking-widest font-light"
+                    >
+                      Ver Detalles
+                    </button>
+                  </div>
+                </motion.div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* [COMPONENTE] Indicadores de progreso y link inferior - Solo mobile */}
-        <div className="p-6 pt-4">
-          {/* [SUB-COMPONENTE] Indicadores de progreso (puntos/barra) */}
-          <div className="flex items-center gap-2 mb-4">
-            {timelineData.map((_, i) => (
-              <div
-                key={i}
-                className={`h-px transition-all ${
-                  i === activeIndex ? 'w-8 bg-noir/60' : 'w-2 bg-noir/10'
-                }`}
-              />
-            ))}
-          </div>
-          {/* [ELEMENTO] Link inferior */}
-          <a href="#" className="text-sm text-noir/60 underline">Learn More About Us</a>
+        {/* [COMPONENTE] Indicadores de progreso del carrusel */}
+        <div className="flex justify-center items-center gap-2 mt-6 px-4">
+          {timelineData.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                if (mobileCarouselRef.current) {
+                  const cardWidth = mobileCarouselRef.current.clientWidth;
+                  mobileCarouselRef.current.scrollTo({
+                    left: index * cardWidth,
+                    behavior: 'smooth'
+                  });
+                }
+                setMobileCarouselIndex(index);
+              }}
+              className={`transition-all duration-300 ${
+                index === mobileCarouselIndex
+                  ? 'w-8 h-1 bg-noir/60'
+                  : 'w-2 h-1 bg-noir/20 hover:bg-noir/30'
+              }`}
+              aria-label={`Ir al proyecto ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
+
+      {/* ======================================================================
+          [COMPONENTE] ProjectModal - Modal con información detallada
+          ====================================================================== */}
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        project={selectedProject}
+      />
 
       {/* ======================================================================
           [STYLE] Estilos personalizados para scrollbar
@@ -688,6 +871,15 @@ const HorizontalTimeline: React.FC = () => {
         }
         .left-scroll-section::-webkit-scrollbar-thumb:hover {
           background: rgba(18, 18, 18, 0.5);
+        }
+        
+        /* Ocultar scrollbar en carrusel mobile */
+        .md\\:hidden::-webkit-scrollbar {
+          display: none;
+        }
+        .md\\:hidden {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
         }
       `}</style>
     </section>

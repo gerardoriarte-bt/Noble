@@ -1,0 +1,16 @@
+# robots.txt para Noble Architecture Studio
+# https://noble.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://noble.com/sitemap.xml
+
+# Disallow admin or private areas (if any in the future)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Crawl-delay (optional, only if needed)
+# Crawl-delay: 1
+

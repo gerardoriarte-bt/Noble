@@ -36,4 +36,20 @@ Thumbs.db
 *-backup.*
 *backup*
 
+# Deployment scripts (keep only the noble.com versions)
+deploy.sh
+ec2-setup.sh
+setup-domain.sh
+
+# Old documentation
+BACKUP_INFO.md
+PLAN_TRABAJO_LOCAL.md
+INSTRUCCIONES_MODELO_3D.md
+EC2-DEPLOYMENT-GUIDE.md
+
+# Unused folders
+IMG/
+Logos/
+roca/
+font/
 

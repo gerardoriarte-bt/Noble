@@ -2,10 +2,32 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const NavLink: React.FC<{ href: string, children: React.ReactNode }> = ({ href, children }) => {
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        // Si es un enlace de ancla (empieza con #)
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            const targetId = href.substring(1);
+            const element = document.getElementById(targetId);
+            if (element) {
+                const headerOffset = 100; // Altura del header
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+        // Si es un enlace a otra página, dejar que el navegador maneje la navegación
+    };
+
     return (
-        <motion.a 
+        <motion.a
             // @ts-ignore
-            href={href} 
+            href={href}
+            // @ts-ignore
+            onClick={handleClick}
             // @ts-ignore
             className="relative text-xs uppercase tracking-wider transition-colors duration-300 text-noir"
             whileHover={{
@@ -14,7 +36,7 @@ const NavLink: React.FC<{ href: string, children: React.ReactNode }> = ({ href, 
             initial="rest"
         >
             {children}
-            <motion.div 
+            <motion.div
                 // @ts-ignore
                 className="absolute bottom-[-4px] left-0 right-0 h-px bg-camel"
                 variants={{
@@ -29,12 +51,37 @@ const NavLink: React.FC<{ href: string, children: React.ReactNode }> = ({ href, 
 }
 
 const MobileNavLink: React.FC<{ href: string, children: React.ReactNode, onClick: () => void }> = ({ href, children, onClick }) => {
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        onClick(); // Cerrar el menú móvil
+        
+        // Si es un enlace de ancla (empieza con #)
+        if (href.startsWith('#')) {
+            e.preventDefault();
+            // Pequeño delay para que el menú se cierre antes del scroll
+            setTimeout(() => {
+                const targetId = href.substring(1);
+                const element = document.getElementById(targetId);
+                if (element) {
+                    const headerOffset = 100; // Altura del header
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }, 100);
+        }
+        // Si es un enlace a otra página, dejar que el navegador maneje la navegación
+    };
+
     return (
-         <motion.a
+        <motion.a
             // @ts-ignore
             href={href}
             // @ts-ignore
-            onClick={onClick}
+            onClick={handleClick}
             // @ts-ignore
             className="text-3xl font-serif text-noir/80 hover:text-noir transition-colors duration-300"
             variants={{
@@ -76,10 +123,29 @@ const Header: React.FC = () => {
                 }}
             >
                 <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-                    <a href="/" className="flex items-center z-50">
-                        <img 
-                            src="/Noble-logo-blanco.png" 
-                            alt="Noble Architecture Studio" 
+                    <a 
+                        href="/" 
+                        className="flex items-center z-50"
+                        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                            // Si estamos en la página principal, hacer scroll suave al inicio
+                            if (window.location.pathname === '/' || window.location.pathname === '') {
+                                e.preventDefault();
+                                const element = document.getElementById('inicio');
+                                if (element) {
+                                    window.scrollTo({
+                                        top: 0,
+                                        behavior: 'smooth'
+                                    });
+                                } else {
+                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                }
+                            }
+                            // Si estamos en otra página, dejar que el navegador navegue normalmente
+                        }}
+                    >
+                        <img
+                            src="/Noble-logo-blanco.png"
+                            alt="Noble Architecture Studio"
                             className="h-20 md:h-24 w-auto"
                             style={{
                                 filter: 'invert(1) brightness(0.15) contrast(1.2)'
@@ -89,27 +155,41 @@ const Header: React.FC = () => {
 
                     {/* Desktop Nav */}
                     <nav className="hidden md:flex items-center space-x-6">
-                        <NavLink href="/about">About</NavLink>
-                        <NavLink href="/#process">Process</NavLink>
-                        <NavLink href="/#portfolio">Portfolio</NavLink>
-                        <motion.a 
+                        <NavLink href="/#inicio">Inicio</NavLink>
+                        <NavLink href="/#proyectos">Proyectos</NavLink>
+                        <NavLink href="/#equipo">Equipo</NavLink>
+                        <motion.a
                             // @ts-ignore
-                            href="/#contact" 
+                            href="/#contact"
+                            // @ts-ignore
+                            onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                e.preventDefault();
+                                const element = document.getElementById('contact');
+                                if (element) {
+                                    const headerOffset = 100;
+                                    const elementPosition = element.getBoundingClientRect().top;
+                                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                                    window.scrollTo({
+                                        top: offsetPosition,
+                                        behavior: 'smooth'
+                                    });
+                                }
+                            }}
                             // @ts-ignore
                             className="text-noir text-xs uppercase tracking-wider font-medium px-4 py-2"
                             whileHover={{ scale: 1.05, filter: 'brightness(1.1)' }}
                             whileTap={{ scale: 0.95 }}
                             transition={{ duration: 0.2 }}
                         >
-                            Contact
+                            Contacto
                         </motion.a>
                     </nav>
 
                     {/* Mobile Menu Button */}
                     <div className="md:hidden z-50">
-                         <motion.button 
+                        <motion.button
                             // @ts-ignore
-                            onClick={toggleMobileMenu} 
+                            onClick={toggleMobileMenu}
                             // @ts-ignore
                             className="w-7 h-7 relative focus:outline-none"
                             animate={mobileMenuOpen ? "open" : "closed"}
@@ -138,7 +218,7 @@ const Header: React.FC = () => {
                     </div>
                 </div>
             </motion.header>
-            
+
             {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {mobileMenuOpen && (
@@ -151,14 +231,29 @@ const Header: React.FC = () => {
                         exit="hidden"
                     >
                         <nav className="flex flex-col items-center space-y-8">
-                            <MobileNavLink href="/about" onClick={toggleMobileMenu}>About</MobileNavLink>
-                            <MobileNavLink href="/#process" onClick={toggleMobileMenu}>Process</MobileNavLink>
-                            <MobileNavLink href="/#portfolio" onClick={toggleMobileMenu}>Portfolio</MobileNavLink>
-                            <motion.a 
+                            <MobileNavLink href="/#inicio" onClick={toggleMobileMenu}>Inicio</MobileNavLink>
+                            <MobileNavLink href="/#proyectos" onClick={toggleMobileMenu}>Proyectos</MobileNavLink>
+                            <MobileNavLink href="/#equipo" onClick={toggleMobileMenu}>Equipo</MobileNavLink>
+                            <motion.a
                                 // @ts-ignore
-                                href="/#contact" 
+                                href="/#contact"
                                 // @ts-ignore
-                                onClick={toggleMobileMenu}
+                                onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
+                                    toggleMobileMenu();
+                                    e.preventDefault();
+                                    setTimeout(() => {
+                                        const element = document.getElementById('contact');
+                                        if (element) {
+                                            const headerOffset = 100;
+                                            const elementPosition = element.getBoundingClientRect().top;
+                                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                                            window.scrollTo({
+                                                top: offsetPosition,
+                                                behavior: 'smooth'
+                                            });
+                                        }
+                                    }, 100);
+                                }}
                                 // @ts-ignore
                                 className="text-noir text-xl font-serif mt-8 px-8 py-4"
                                 variants={{
@@ -168,7 +263,7 @@ const Header: React.FC = () => {
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                             >
-                                Contact
+                                Contacto
                             </motion.a>
                         </nav>
                     </motion.div>
