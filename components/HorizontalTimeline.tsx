@@ -26,14 +26,14 @@ const timelineData: TimelineItem[] = [
     year: 2022,
     title: "Dominique",
     description: "Estratégicamente ubicado en el barrio Cielomar, a solo 200 metros de la mejor y más exclusiva playa de la zona norte.",
-    image: "/proyectos/DOMINIQUE/IMG-GENERAL.png",
-    horizontalImage: "/proyectos/DOMINIQUE/IMG-GENERAL.png",
-    verticalImage: "/proyectos/DOMINIQUE/IMG-INTERNA.png",
+    image: "/Proyectos/DOMINIQUE/IMG-GENERAL.png",
+    horizontalImage: "/Proyectos/DOMINIQUE/IMG-GENERAL.png",
+    verticalImage: "/Proyectos/DOMINIQUE/IMG-INTERNA.png",
     location: "Cartagena de Indias",
     detailedDescription: "Estratégicamente ubicado en el barrio Cielomar, Dominique está a solo 200 metros de la mejor y más exclusiva playa de la zona norte, contigua al hotel Las Américas, y en el corazón de la recuperada ciénaga de la virgen.",
     gallery: [
-      "/proyectos/DOMINIQUE/IMG-GENERAL.png",
-      "/proyectos/DOMINIQUE/IMG-INTERNA.png"
+      "/Proyectos/DOMINIQUE/IMG-GENERAL.png",
+      "/Proyectos/DOMINIQUE/IMG-INTERNA.png"
     ],
     specifications: [
       "Edificio de 14 pisos",
@@ -48,14 +48,14 @@ const timelineData: TimelineItem[] = [
     year: 2019,
     title: "Martinique",
     description: "Estratégicamente ubicado en el barrio Cielomar, a solo 200 metros de la mejor y más exclusiva playa de la zona norte.",
-    image: "/proyectos/MARTINIQUE/IMG-GENERAL.png",
-    horizontalImage: "/proyectos/MARTINIQUE/IMG-GENERAL.png",
-    verticalImage: "/proyectos/MARTINIQUE/IMG-INTERNA.png",
+    image: "/Proyectos/MARTINIQUE/IMG-GENERAL.png",
+    horizontalImage: "/Proyectos/MARTINIQUE/IMG-GENERAL.png",
+    verticalImage: "/Proyectos/MARTINIQUE/IMG-INTERNA.png",
     location: "Cartagena de Indias",
     detailedDescription: "Estratégicamente ubicado en el barrio Cielomar, Martinique está a solo 200 metros de la mejor y más exclusiva playa de la zona norte, contigua al hotel Las Américas, y en el corazón de la recuperada ciénaga de la virgen.",
     gallery: [
-      "/proyectos/MARTINIQUE/IMG-GENERAL.png",
-      "/proyectos/MARTINIQUE/IMG-INTERNA.png"
+      "/Proyectos/MARTINIQUE/IMG-GENERAL.png",
+      "/Proyectos/MARTINIQUE/IMG-INTERNA.png"
     ],
     specifications: [
       "Edificio de 15 pisos",
@@ -70,14 +70,14 @@ const timelineData: TimelineItem[] = [
     year: 2020,
     title: "Antique",
     description: "Ya no tienes que salir de la ciudad para encontrar comodidad y poder disfrutar de zonas verdes. El proyecto Antique traerá la calidad de vida que tú y tu familia estaban buscando.",
-    image: "/proyectos/ANTIQUE/IMG-GENERAL.png",
-    horizontalImage: "/proyectos/ANTIQUE/IMG-GENERAL.png",
-    verticalImage: "/proyectos/ANTIQUE/IMG-INTERNA.png",
+    image: "/Proyectos/ANTIQUE/IMG-GENERAL.png",
+    horizontalImage: "/Proyectos/ANTIQUE/IMG-GENERAL.png",
+    verticalImage: "/Proyectos/ANTIQUE/IMG-INTERNA.png",
     location: "Bogotá",
     detailedDescription: "ANTIQUE es un proyecto de vivienda con 36 unidades de apartamentos en 5 pisos de altura que ofrece una excelente ubicación en un sector residencial consolidado de la ciudad de Bogotá. El proyecto es el marco y fondo de un agradable y reservado parque que ofrece una ventaja única para sus propietarios y habitantes ya que cuenta con una zona verde a lo ancho del proyecto.\n\nEstructuración, Diseño, Promoción, Gerencia y Construcción Edificio de Apartamentos Antique en Bogotá, Colombia. Desarrollo propio en consorcio con CLV Arquitectura y Construcción y Mas Ingeniería SC. Fiduciaria Fidubogotá y crédito constructor Banco de Bogotá. Proyecto de 7200m² de construcción, COP 22,000 millones en ventas, 40 apartamentos y 5 pisos de altura en el barrio Nuevo Country (sector Antigua). Proyecto culminado exitosamente.",
     gallery: [
-      "/proyectos/ANTIQUE/IMG-GENERAL.png",
-      "/proyectos/ANTIQUE/IMG-INTERNA.png"
+      "/Proyectos/ANTIQUE/IMG-GENERAL.png",
+      "/Proyectos/ANTIQUE/IMG-INTERNA.png"
     ],
     specifications: [
       "Edificio de 5 pisos",
@@ -92,14 +92,14 @@ const timelineData: TimelineItem[] = [
     year: 2023,
     title: "Baruq",
     description: "Proyecto único de 360 unidades, 3 edificios, cada uno de 5 pisos más altillo. Un proyecto que se desarrollará en 3 etapas de venta.",
-    image: "/proyectos/BARUQ/IMG-GENERAL.png",
-    horizontalImage: "/proyectos/BARUQ/IMG-GENERAL.png",
-    verticalImage: "/proyectos/BARUQ/IMG-INTERNA.png",
+    image: "/Proyectos/BARUQ/IMG-GENERAL.png",
+    horizontalImage: "/Proyectos/BARUQ/IMG-GENERAL.png",
+    verticalImage: "/Proyectos/BARUQ/IMG-INTERNA.png",
     location: "Cartagena",
     detailedDescription: "Proyecto único de 360 unidades, 3 edificios, cada uno de 5 pisos más altillo. Un proyecto que se desarrollará en 3 etapas de venta. Iniciando con 120 unidades en la primera etapa, cada etapa para uso residencial y turístico.\n\nSOSTENIBLE: Construcción consciente con el entorno.\n\nINVERSIÓN INTELIGENTE: Diseñado para maximizar la inversión, con un modelo mixto de rentabilidad y experiencia.\n\nEXPERIENCIA: La localización garantiza el mejor spot marino del caribe colombiano. Ubicado en la milla de oro de Barú.\n\nÚNICO: Único proyecto de villas hoteleras o turística en Cartagena.\n\nLUJO: Diseño original de la reconocida firma Duque Martínez, mezclando el ambiente de la playa costera con el paisaje caribeño.",
     gallery: [
-      "/proyectos/BARUQ/IMG-GENERAL.png",
-      "/proyectos/BARUQ/IMG-INTERNA.png"
+      "/Proyectos/BARUQ/IMG-GENERAL.png",
+      "/Proyectos/BARUQ/IMG-INTERNA.png"
     ],
     specifications: [
       "Estructura: 5 pisos + altillo",
@@ -116,13 +116,13 @@ const timelineData: TimelineItem[] = [
     year: 2019,
     title: "Emaus",
     description: "Diseño, gerencia y construcción Parroquia Discípulos de Emaús en Bogotá, Colombia.",
-    image: "/proyectos/EMAUS/IMG-GENERAL.png",
-    verticalImage: "/proyectos/EMAUS/IMG-INTERNA.jpeg",
+    image: "/Proyectos/EMAUS/IMG-GENERAL.png",
+    verticalImage: "/Proyectos/EMAUS/IMG-INTERNA.jpeg",
     location: "Bogotá",
     detailedDescription: "Diseño, gerencia y construcción Parroquia Discípulos de Emaús en Bogotá, Colombia. Diseño, construcción y gerencia de proyecto para las facilidades parroquiales de 1500m² incluyendo el espacio de congregación. Proyecto culminado exitosamente.",
     gallery: [
-      "/proyectos/EMAUS/IMG-GENERAL.png",
-      "/proyectos/EMAUS/IMG-INTERNA.jpeg"
+      "/Proyectos/EMAUS/IMG-GENERAL.png",
+      "/Proyectos/EMAUS/IMG-INTERNA.jpeg"
     ],
     specifications: [
       "1500 m² de facilidades parroquiales",
@@ -135,14 +135,14 @@ const timelineData: TimelineItem[] = [
     year: 2019,
     title: "Serrezuela",
     description: "Centro comercial de lujo con arquitectura grandiosa que remite a una parte importante de la historia colombiana.",
-    image: "/proyectos/SERREZUELA/IMG-GENERAL.png",
-    horizontalImage: "/proyectos/SERREZUELA/IMG-GENERAL.png",
-    verticalImage: "/proyectos/SERREZUELA/IMG-INTERNA.png",
+    image: "/Proyectos/SERREZUELA/IMG-GENERAL.png",
+    horizontalImage: "/Proyectos/SERREZUELA/IMG-GENERAL.png",
+    verticalImage: "/Proyectos/SERREZUELA/IMG-INTERNA.png",
     location: "Cartagena de Indias",
     detailedDescription: "El centro comercial de lujo Plaza La Serrezuela es imponente: la construcción de una arquitectura grandiosa, que remite a una parte importante de la historia colombiana, suma 22.400 m2 de área construida, de los cuales más de 10.000 m2 se configuran como ABA. Esta división se debe a que, además de ser un lujoso centro comercial, el emprendimiento también alberga un centro cultural y un centro de convenciones. Todo esto en el corazón de Cartagena.",
     gallery: [
-      "/proyectos/SERREZUELA/IMG-GENERAL.png",
-      "/proyectos/SERREZUELA/IMG-INTERNA.png"
+      "/Proyectos/SERREZUELA/IMG-GENERAL.png",
+      "/Proyectos/SERREZUELA/IMG-INTERNA.png"
     ],
     specifications: [
       "22.000 m² de área total",
