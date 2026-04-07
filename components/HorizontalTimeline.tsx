@@ -26,22 +26,14 @@ const timelineData: TimelineItem[] = [
     year: 2022,
     title: "Dominique",
     description: "Estratégicamente ubicado en el barrio Cielomar, a solo 200 metros de la mejor y más exclusiva playa de la zona norte.",
-    image: "/Proyectos/DOMINIQUE/main.png",
-    horizontalImage: "/Proyectos/DOMINIQUE/image00013.jpeg",
+    image: "/proyectos/DOMINIQUE/IMG-GENERAL.png",
+    horizontalImage: "/proyectos/DOMINIQUE/IMG-GENERAL.png",
+    verticalImage: "/proyectos/DOMINIQUE/IMG-INTERNA.png",
     location: "Cartagena de Indias",
     detailedDescription: "Estratégicamente ubicado en el barrio Cielomar, Dominique está a solo 200 metros de la mejor y más exclusiva playa de la zona norte, contigua al hotel Las Américas, y en el corazón de la recuperada ciénaga de la virgen.",
     gallery: [
-      "/Proyectos/DOMINIQUE/image00002.png",
-      "/Proyectos/DOMINIQUE/image00005.jpeg",
-      "/Proyectos/DOMINIQUE/image00008.jpeg",
-      "/Proyectos/DOMINIQUE/image00010.jpeg",
-      "/Proyectos/DOMINIQUE/image00011.jpeg",
-      "/Proyectos/DOMINIQUE/image00012.jpeg",
-      "/Proyectos/DOMINIQUE/image00013.jpeg",
-      "/Proyectos/DOMINIQUE/image00085.jpeg",
-      "/Proyectos/DOMINIQUE/image00173.jpeg",
-      "/Proyectos/DOMINIQUE/image00175.jpeg",
-      "/Proyectos/DOMINIQUE/PHOTO-2023-05-09-09-12-13.jpg"
+      "/proyectos/DOMINIQUE/IMG-GENERAL.png",
+      "/proyectos/DOMINIQUE/IMG-INTERNA.png"
     ],
     specifications: [
       "Edificio de 14 pisos",
@@ -56,19 +48,14 @@ const timelineData: TimelineItem[] = [
     year: 2019,
     title: "Martinique",
     description: "Estratégicamente ubicado en el barrio Cielomar, a solo 200 metros de la mejor y más exclusiva playa de la zona norte.",
-    image: "/Proyectos/MARTINIQUE/main.jpeg",
-    horizontalImage: "/Proyectos/MARTINIQUE/IMG_70552.jpg",
+    image: "/proyectos/MARTINIQUE/IMG-GENERAL.png",
+    horizontalImage: "/proyectos/MARTINIQUE/IMG-GENERAL.png",
+    verticalImage: "/proyectos/MARTINIQUE/IMG-INTERNA.png",
     location: "Cartagena de Indias",
     detailedDescription: "Estratégicamente ubicado en el barrio Cielomar, Martinique está a solo 200 metros de la mejor y más exclusiva playa de la zona norte, contigua al hotel Las Américas, y en el corazón de la recuperada ciénaga de la virgen.",
     gallery: [
-      "/Proyectos/MARTINIQUE/image00002.jpeg",
-      "/Proyectos/MARTINIQUE/image00030.jpeg",
-      "/Proyectos/MARTINIQUE/image00044.jpeg",
-      "/Proyectos/MARTINIQUE/image00045.jpeg",
-      "/Proyectos/MARTINIQUE/IMG_0006.JPG",
-      "/Proyectos/MARTINIQUE/IMG_7042.jpeg",
-      "/Proyectos/MARTINIQUE/IMG_70552.jpg",
-      "/Proyectos/MARTINIQUE/Jacuzzi Foto.jpg"
+      "/proyectos/MARTINIQUE/IMG-GENERAL.png",
+      "/proyectos/MARTINIQUE/IMG-INTERNA.png"
     ],
     specifications: [
       "Edificio de 15 pisos",
@@ -83,16 +70,14 @@ const timelineData: TimelineItem[] = [
     year: 2020,
     title: "Antique",
     description: "Ya no tienes que salir de la ciudad para encontrar comodidad y poder disfrutar de zonas verdes. El proyecto Antique traerá la calidad de vida que tú y tu familia estaban buscando.",
-    image: "/Proyectos/ANTIQUE/horizontal.png",
-    verticalImage: "/Proyectos/ANTIQUE/main.png",
+    image: "/proyectos/ANTIQUE/IMG-GENERAL.png",
+    horizontalImage: "/proyectos/ANTIQUE/IMG-GENERAL.png",
+    verticalImage: "/proyectos/ANTIQUE/IMG-INTERNA.png",
     location: "Bogotá",
     detailedDescription: "ANTIQUE es un proyecto de vivienda con 36 unidades de apartamentos en 5 pisos de altura que ofrece una excelente ubicación en un sector residencial consolidado de la ciudad de Bogotá. El proyecto es el marco y fondo de un agradable y reservado parque que ofrece una ventaja única para sus propietarios y habitantes ya que cuenta con una zona verde a lo ancho del proyecto.\n\nEstructuración, Diseño, Promoción, Gerencia y Construcción Edificio de Apartamentos Antique en Bogotá, Colombia. Desarrollo propio en consorcio con CLV Arquitectura y Construcción y Mas Ingeniería SC. Fiduciaria Fidubogotá y crédito constructor Banco de Bogotá. Proyecto de 7200m² de construcción, COP 22,000 millones en ventas, 40 apartamentos y 5 pisos de altura en el barrio Nuevo Country (sector Antigua). Proyecto culminado exitosamente.",
     gallery: [
-      "/Proyectos/ANTIQUE/main.png",
-      "/Proyectos/ANTIQUE/horizontal.png",
-      "/Proyectos/ANTIQUE/vertical.png",
-      "/Proyectos/ANTIQUE/Captura%20de%20pantalla%202025-12-11%20223509.png",
-      "/Proyectos/ANTIQUE/Captura%20de%20pantalla%202025-12-11%20223524.png"
+      "/proyectos/ANTIQUE/IMG-GENERAL.png",
+      "/proyectos/ANTIQUE/IMG-INTERNA.png"
     ],
     specifications: [
       "Edificio de 5 pisos",
@@ -107,16 +92,14 @@ const timelineData: TimelineItem[] = [
     year: 2023,
     title: "Baruq",
     description: "Proyecto único de 360 unidades, 3 edificios, cada uno de 5 pisos más altillo. Un proyecto que se desarrollará en 3 etapas de venta.",
-    image: "/Proyectos/BARUQ/main.jpg",
-    verticalImage: "/Proyectos/BARUQ/1.6.jpg",
+    image: "/proyectos/BARUQ/IMG-GENERAL.png",
+    horizontalImage: "/proyectos/BARUQ/IMG-GENERAL.png",
+    verticalImage: "/proyectos/BARUQ/IMG-INTERNA.png",
     location: "Cartagena",
     detailedDescription: "Proyecto único de 360 unidades, 3 edificios, cada uno de 5 pisos más altillo. Un proyecto que se desarrollará en 3 etapas de venta. Iniciando con 120 unidades en la primera etapa, cada etapa para uso residencial y turístico.\n\nSOSTENIBLE: Construcción consciente con el entorno.\n\nINVERSIÓN INTELIGENTE: Diseñado para maximizar la inversión, con un modelo mixto de rentabilidad y experiencia.\n\nEXPERIENCIA: La localización garantiza el mejor spot marino del caribe colombiano. Ubicado en la milla de oro de Barú.\n\nÚNICO: Único proyecto de villas hoteleras o turística en Cartagena.\n\nLUJO: Diseño original de la reconocida firma Duque Martínez, mezclando el ambiente de la playa costera con el paisaje caribeño.",
     gallery: [
-      "/Proyectos/BARUQ/main.jpg",
-      "/Proyectos/BARUQ/1.3.jpg",
-      "/Proyectos/BARUQ/1.6.jpg",
-      "/Proyectos/BARUQ/A1.png",
-      "/Proyectos/BARUQ/C.png"
+      "/proyectos/BARUQ/IMG-GENERAL.png",
+      "/proyectos/BARUQ/IMG-INTERNA.png"
     ],
     specifications: [
       "Estructura: 5 pisos + altillo",
@@ -133,11 +116,13 @@ const timelineData: TimelineItem[] = [
     year: 2019,
     title: "Emaus",
     description: "Diseño, gerencia y construcción Parroquia Discípulos de Emaús en Bogotá, Colombia.",
-    image: "/Proyectos/EMAUS/main.jpg",
+    image: "/proyectos/EMAUS/IMG-GENERAL.png",
+    verticalImage: "/proyectos/EMAUS/IMG-INTERNA.jpeg",
     location: "Bogotá",
     detailedDescription: "Diseño, gerencia y construcción Parroquia Discípulos de Emaús en Bogotá, Colombia. Diseño, construcción y gerencia de proyecto para las facilidades parroquiales de 1500m² incluyendo el espacio de congregación. Proyecto culminado exitosamente.",
     gallery: [
-      "/Proyectos/EMAUS/main.jpg"
+      "/proyectos/EMAUS/IMG-GENERAL.png",
+      "/proyectos/EMAUS/IMG-INTERNA.jpeg"
     ],
     specifications: [
       "1500 m² de facilidades parroquiales",
@@ -150,14 +135,14 @@ const timelineData: TimelineItem[] = [
     year: 2019,
     title: "Serrezuela",
     description: "Centro comercial de lujo con arquitectura grandiosa que remite a una parte importante de la historia colombiana.",
-    image: "/Proyectos/SERREZUELA/FOT3.jpg",
-    horizontalImage: "/Proyectos/SERREZUELA/main.jpg",
+    image: "/proyectos/SERREZUELA/IMG-GENERAL.png",
+    horizontalImage: "/proyectos/SERREZUELA/IMG-GENERAL.png",
+    verticalImage: "/proyectos/SERREZUELA/IMG-INTERNA.png",
     location: "Cartagena de Indias",
     detailedDescription: "El centro comercial de lujo Plaza La Serrezuela es imponente: la construcción de una arquitectura grandiosa, que remite a una parte importante de la historia colombiana, suma 22.400 m2 de área construida, de los cuales más de 10.000 m2 se configuran como ABA. Esta división se debe a que, además de ser un lujoso centro comercial, el emprendimiento también alberga un centro cultural y un centro de convenciones. Todo esto en el corazón de Cartagena.",
     gallery: [
-      "/Proyectos/SERREZUELA/main.jpg",
-      "/Proyectos/SERREZUELA/FOT2.jpg",
-      "/Proyectos/SERREZUELA/FOT3.jpg"
+      "/proyectos/SERREZUELA/IMG-GENERAL.png",
+      "/proyectos/SERREZUELA/IMG-INTERNA.png"
     ],
     specifications: [
       "22.000 m² de área total",
@@ -388,6 +373,21 @@ const HorizontalTimeline: React.FC = () => {
   }, [activeIndex]);
 
   // ========================================================================
+  // [HANDLER] nextProject / prevProject - Navegación manual por botones
+  // ========================================================================
+  const nextProject = () => {
+    if (activeIndex < timelineData.length - 1) {
+      setActiveIndex(activeIndex + 1);
+    }
+  };
+
+  const prevProject = () => {
+    if (activeIndex > 0) {
+      setActiveIndex(activeIndex - 1);
+    }
+  };
+
+  // ========================================================================
 
   // ========================================================================
   // [HANDLER] handleOpenModal - Abre el modal con el proyecto seleccionado
@@ -413,7 +413,7 @@ const HorizontalTimeline: React.FC = () => {
   // [RENDER] JSX Principal
   // ============================================================================
   return (
-    <section id="proyectos" className="h-screen bg-cloud md:flex md:overflow-hidden" style={{ height: '80vh', maxHeight: '80vh' }}>
+    <section id="proyectos" className="relative h-screen bg-cloud md:flex md:overflow-hidden" style={{ height: '80vh', maxHeight: '80vh' }}>
       {/* ======================================================================
           [COMPONENTE] Sección izquierda - Carrusel vertical de proyectos completos (1/3 del ancho)
           ====================================================================== */}
@@ -846,8 +846,58 @@ const HorizontalTimeline: React.FC = () => {
       </div>
 
       {/* ======================================================================
-          [COMPONENTE] ProjectModal - Modal con información detallada
+          [COMPONENTE] Controles de navegación - Flechas flotantes
           ====================================================================== */}
+      <div className="absolute bottom-12 right-12 z-50 flex items-center gap-4 pointer-events-auto hidden md:flex">
+        <div className="flex items-center gap-2 bg-cloud/80 backdrop-blur-md border border-noir/10 px-4 py-3 rounded-full shadow-lg">
+          <span className="text-sm font-medium text-noir/80">{activeIndex + 1}</span>
+          <span className="text-xs text-noir/30">/</span>
+          <span className="text-xs text-noir/40">{timelineData.length}</span>
+        </div>
+
+        <motion.button
+          // @ts-ignore
+          onClick={prevProject}
+          disabled={activeIndex === 0}
+          className={`group flex items-center justify-center w-14 h-14 rounded-full border border-noir/10 bg-cloud/80 backdrop-blur-md transition-all ${activeIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110 shadow-lg'
+            }`}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Proyecto anterior"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className={`transition-colors duration-300 ${activeIndex === 0 ? 'stroke-noir/40' : 'stroke-noir group-hover:stroke-cloud'}`}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          </svg>
+        </motion.button>
+
+        <motion.button
+          // @ts-ignore
+          onClick={nextProject}
+          disabled={activeIndex === timelineData.length - 1}
+          className={`group flex items-center justify-center w-14 h-14 rounded-full border border-noir/10 bg-cloud/80 backdrop-blur-md transition-all ${activeIndex === timelineData.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110 shadow-lg'
+            }`}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Siguiente proyecto"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className={`transition-colors duration-300 ${activeIndex === timelineData.length - 1 ? 'stroke-noir/40' : 'stroke-noir group-hover:stroke-cloud'}`}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          </svg>
+        </motion.button>
+      </div>
+
       <ProjectModal
         isOpen={isModalOpen}
         onClose={handleCloseModal}
@@ -872,7 +922,12 @@ const HorizontalTimeline: React.FC = () => {
         .left-scroll-section::-webkit-scrollbar-thumb:hover {
           background: rgba(18, 18, 18, 0.5);
         }
-        
+
+        /* Ocultar botones de scroll nativos si los hay */
+        .left-scroll-section {
+          scrollbar-width: thin;
+        }
+
         /* Ocultar scrollbar en carrusel mobile */
         .md\\:hidden::-webkit-scrollbar {
           display: none;
