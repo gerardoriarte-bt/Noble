@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 
 // ============================================================================
@@ -17,60 +17,47 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Juan Carlos Martinez',
     role: 'Gerente General',
-    image: '/Equipo/JUAN CARLOS MARTINEZ (GEENTE GENERAL).jpeg'
+    image: '/Equipo/juan-carlos.jpeg'
   },
   {
     name: 'Gustavo Duque Izquierdo',
     role: 'Gerente de Diseño',
-    image: '/Equipo/GUSTAVO DUQUE IZQUIERDO ( GERENTE DE DISEÑO).jpeg'
+    image: '/Equipo/gustavo-duque.jpeg'
   },
   {
     name: 'Jhonatan Jimenez',
     role: 'Gerente de Proyectos',
-    image: '/Equipo/JHONATAN JIMENEZ ( GERENTE DE PROYECTOS).jpeg'
+    image: '/Equipo/jhonatan-jimenez.jpeg'
   },
   {
     name: 'José David Fandiño',
     role: 'Arquitecto Junior',
-    image: '/Equipo/JOSÉ DAVID FANDIÑO ( ARQUITECTO JUNIOR).jpeg'
+    image: '/Equipo/jose-david.jpeg'
   },
   {
     name: 'Karen Tovar',
     role: 'Contabilidad',
-    image: '/Equipo/KAREN TOVAR ( CONTABILIDAD).jpeg'
+    image: '/Equipo/karen-tovar.jpeg'
   },
   {
     name: 'Ingrid Kemes',
     role: 'Administrativo',
-    image: '/Equipo/INGRID KEMES (  ADMINISTRATIVO).jpeg'
+    image: '/Equipo/ingrid-kemes.jpeg'
   }
 ];
 
 // ============================================================================
-// [HELPER] normalizeImagePath - Normaliza la ruta de imagen para manejar caracteres especiales
+// [HELPER] normalizeImagePath - Normaliza la ruta de imagen para la web
 // ============================================================================
 const normalizeImagePath = (path: string): string => {
-  // Normalizar a NFD (descompuesto) para que coincida con los nombres de archivo del sistema
-  // Los archivos tienen caracteres combinados (NFD), no precompuestos (NFC)
-  const normalized = path.normalize('NFD');
-  // #region agent log
-  fetch('http://127.0.0.1:7242/ingest/fd2f8a6c-9d69-45b6-ba9e-7a4c38f77a5f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Team.tsx:normalizeImagePath',message:'Path normalization NFD',data:{originalPath:path,normalizedPath:normalized,originalBytes:Array.from(new TextEncoder().encode(path)).map(b=>b.toString(16).padStart(2,'0')).join(' '),normalizedBytes:Array.from(new TextEncoder().encode(normalized)).map(b=>b.toString(16).padStart(2,'0')).join(' ')},timestamp:Date.now(),sessionId:'debug-session',runId:'run3',hypothesisId:'D'})}).catch(()=>{});
-  // #endregion
-  return normalized;
+  // Ahora que no hay caracteres especiales, un encodeURI es suficiente y seguro
+  return encodeURI(path);
 };
 
 // ============================================================================
 // [COMPONENTE] Team - Sección de equipo
 // ============================================================================
 const Team: React.FC = () => {
-  // #region agent log
-  useEffect(() => {
-      teamMembers.forEach((member, idx) => {
-        const normalizedPath = normalizeImagePath(member.image);
-        fetch('http://127.0.0.1:7242/ingest/fd2f8a6c-9d69-45b6-ba9e-7a4c38f77a5f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Team.tsx:useEffect',message:'Team member data initialized',data:{index:idx,memberName:member.name,imagePath:member.image,normalizedPath:normalizedPath},timestamp:Date.now(),sessionId:'debug-session',runId:'run3',hypothesisId:'C'})}).catch(()=>{});
-      });
-  }, []);
-  // #endregion
   return (
     <section id="equipo" className="w-full bg-cloud py-20 md:py-32">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
@@ -110,30 +97,13 @@ const Team: React.FC = () => {
                     objectFit: 'cover',
                     objectPosition: 'center'
                   }}
-                  onLoad={() => {
-                    // #region agent log
-                    const normalizedPath = normalizeImagePath(member.image);
-                    fetch('http://127.0.0.1:7242/ingest/fd2f8a6c-9d69-45b6-ba9e-7a4c38f77a5f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Team.tsx:onLoad',message:'Image loaded successfully',data:{memberName:member.name,imagePath:member.image,normalizedPath:normalizedPath},timestamp:Date.now(),sessionId:'debug-session',runId:'run3',hypothesisId:'A'})}).catch(()=>{});
-                    // #endregion
-                  }}
                   onError={(e) => {
-                    // #region agent log
-                    const target = e.target as HTMLImageElement;
-                    const originalSrc = member.image;
-                    const normalizedPath = normalizeImagePath(member.image);
-                    fetch('http://127.0.0.1:7242/ingest/fd2f8a6c-9d69-45b6-ba9e-7a4c38f77a5f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Team.tsx:onError',message:'Image load error',data:{memberName:member.name,originalPath:originalSrc,normalizedPath:normalizedPath,currentSrc:target.src,errorType:'onError triggered'},timestamp:Date.now(),sessionId:'debug-session',runId:'run3',hypothesisId:'A'})}).catch(()=>{});
-                    // #endregion
                     console.error('Error loading team member image:', member.image);
+                    const target = e.target as HTMLImageElement;
                     const parent = target.parentElement;
                     if (parent) {
                       parent.innerHTML = `<div class="w-full h-full flex items-center justify-center text-noir/30 text-sm">Imagen no disponible</div>`;
                     }
-                  }}
-                  onLoadStart={() => {
-                    // #region agent log
-                    const normalizedPath = normalizeImagePath(member.image);
-                    fetch('http://127.0.0.1:7242/ingest/fd2f8a6c-9d69-45b6-ba9e-7a4c38f77a5f',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({location:'Team.tsx:onLoadStart',message:'Image load started',data:{memberName:member.name,imagePath:member.image,normalizedPath:normalizedPath},timestamp:Date.now(),sessionId:'debug-session',runId:'run3',hypothesisId:'B'})}).catch(()=>{});
-                    // #endregion
                   }}
                   loading="lazy"
                 />
@@ -158,4 +128,3 @@ const Team: React.FC = () => {
 };
 
 export default Team;
-
