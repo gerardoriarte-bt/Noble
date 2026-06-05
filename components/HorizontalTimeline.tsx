@@ -413,7 +413,7 @@ const HorizontalTimeline: React.FC = () => {
   // [RENDER] JSX Principal
   // ============================================================================
   return (
-    <section id="proyectos" className="relative h-screen bg-cloud md:flex md:overflow-hidden" style={{ height: '80vh', maxHeight: '80vh' }}>
+    <section id="proyectos" className="relative bg-cloud md:flex md:overflow-hidden md:h-[80vh] md:max-h-[80vh]">
       {/* ======================================================================
           [COMPONENTE] Sección izquierda - Carrusel vertical de proyectos completos (1/3 del ancho)
           ====================================================================== */}
@@ -819,29 +819,66 @@ const HorizontalTimeline: React.FC = () => {
           </div>
         </div>
 
-        {/* [COMPONENTE] Indicadores de progreso del carrusel */}
-        <div className="flex justify-center items-center gap-2 mt-6 px-4">
-          {timelineData.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => {
-                if (mobileCarouselRef.current) {
-                  const cardWidth = mobileCarouselRef.current.clientWidth;
-                  mobileCarouselRef.current.scrollTo({
-                    left: index * cardWidth,
-                    behavior: 'smooth'
-                  });
-                }
-                setMobileCarouselIndex(index);
-              }}
-              className={`transition-all duration-300 ${
-                index === mobileCarouselIndex
-                  ? 'w-8 h-1 bg-noir/60'
-                  : 'w-2 h-1 bg-noir/20 hover:bg-noir/30'
-              }`}
-              aria-label={`Ir al proyecto ${index + 1}`}
-            />
-          ))}
+        {/* [COMPONENTE] Navegación mobile: flechas + contador + dots */}
+        <div className="flex justify-between items-center mt-6 px-6">
+          <button
+            onClick={() => {
+              const prev = mobileCarouselIndex - 1;
+              if (prev >= 0 && mobileCarouselRef.current) {
+                const cardWidth = mobileCarouselRef.current.clientWidth;
+                mobileCarouselRef.current.scrollTo({ left: prev * cardWidth, behavior: 'smooth' });
+                setMobileCarouselIndex(prev);
+              }
+            }}
+            disabled={mobileCarouselIndex === 0}
+            className={`flex items-center justify-center w-10 h-10 rounded-full border border-noir/20 transition-all ${
+              mobileCarouselIndex === 0 ? 'opacity-20 cursor-not-allowed' : 'bg-cloud active:bg-noir active:border-noir'
+            }`}
+            aria-label="Proyecto anterior"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="stroke-noir" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+            </svg>
+          </button>
+
+          <div className="flex items-center gap-2">
+            {timelineData.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => {
+                  if (mobileCarouselRef.current) {
+                    const cardWidth = mobileCarouselRef.current.clientWidth;
+                    mobileCarouselRef.current.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
+                  }
+                  setMobileCarouselIndex(index);
+                }}
+                className={`transition-all duration-300 ${
+                  index === mobileCarouselIndex ? 'w-8 h-1 bg-noir/60' : 'w-2 h-1 bg-noir/20'
+                }`}
+                aria-label={`Ir al proyecto ${index + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={() => {
+              const next = mobileCarouselIndex + 1;
+              if (next < timelineData.length && mobileCarouselRef.current) {
+                const cardWidth = mobileCarouselRef.current.clientWidth;
+                mobileCarouselRef.current.scrollTo({ left: next * cardWidth, behavior: 'smooth' });
+                setMobileCarouselIndex(next);
+              }
+            }}
+            disabled={mobileCarouselIndex === timelineData.length - 1}
+            className={`flex items-center justify-center w-10 h-10 rounded-full border border-noir/20 transition-all ${
+              mobileCarouselIndex === timelineData.length - 1 ? 'opacity-20 cursor-not-allowed' : 'bg-cloud active:bg-noir active:border-noir'
+            }`}
+            aria-label="Siguiente proyecto"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="stroke-noir" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+            </svg>
+          </button>
         </div>
       </div>
 
