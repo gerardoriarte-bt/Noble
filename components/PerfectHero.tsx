@@ -26,7 +26,7 @@ const PerfectHero: React.FC = () => {
         >
             {/* Imagen de fondo que cubre completamente */}
             <motion.img
-                src="/image/hero-background.jpg"
+                src="/image/hero-background.webp"
                 alt="Noble Architecture Studio - Proyectos arquitectónicos de excelencia en Cartagena y Bogotá"
                 className="absolute inset-0 w-full h-full object-cover z-0"
                 style={{

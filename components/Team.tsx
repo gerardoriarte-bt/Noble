@@ -17,12 +17,12 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Juan Carlos Martinez',
     role: 'Gerente General',
-    image: '/Equipo/juan-carlos.jpeg'
+    image: '/Equipo/Juan-Carlos-Martinez.webp'
   },
   {
     name: 'Gustavo Duque Izquierdo',
     role: 'Gerente de Diseño',
-    image: '/Equipo/gustavo-duque.jpeg'
+    image: '/Equipo/Gustavo-Duque-Izquierdo.webp'
   },
   {
     name: 'Jhonatan Jimenez',
@@ -32,17 +32,37 @@ const teamMembers: TeamMember[] = [
   {
     name: 'José David Fandiño',
     role: 'Arquitecto Junior',
-    image: '/Equipo/jose-david.jpeg'
+    image: '/Equipo/Jose-David-Fandino.webp'
   },
   {
     name: 'Karen Tovar',
     role: 'Contabilidad',
-    image: '/Equipo/karen-tovar.jpeg'
+    image: '/Equipo/Karen-Tovar.webp'
   },
   {
     name: 'Ingrid Kemes',
     role: 'Administrativo',
     image: '/Equipo/ingrid-kemes.jpeg'
+  },
+  {
+    name: 'Lina Zhang',
+    role: 'Cargo',
+    image: '/Equipo/Lina-Zhang.webp'
+  },
+  {
+    name: 'Nombre Apellido',
+    role: 'Cargo',
+    image: '/Equipo/team01.webp'
+  },
+  {
+    name: 'Nombre Apellido',
+    role: 'Cargo',
+    image: '/Equipo/team02.webp'
+  },
+  {
+    name: 'Nombre Apellido',
+    role: 'Cargo',
+    image: '/Equipo/team03.webp'
   }
 ];
 
