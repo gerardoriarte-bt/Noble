@@ -74,7 +74,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
               {/* Header del Modal */}
               <div className="flex items-center justify-between p-6 border-b border-noir/10">
                 <div>
-                  <h2 className="text-3xl md:text-4xl font-serif text-noir font-light mb-1">
+                  <h2 className="text-2xl md:text-4xl font-serif text-noir font-light mb-1">
                     {project.title}
                   </h2>
                   <p className="text-sm text-noir/50 uppercase tracking-widest">
@@ -105,12 +105,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
               {/* Contenido del Modal - Scrollable */}
               <div className="flex-1 overflow-y-auto">
                 <div className="grid md:grid-cols-[65%_35%] gap-0 min-h-0">
-                  {/* Sección de Imágenes - Izquierda - Priorizada */}
-                  <div className="bg-noir/5 p-8 flex flex-col">
+                  {/* Sección de Imágenes - Izquierda */}
+                  <div className="bg-noir/5 p-4 md:p-8 flex flex-col">
                     {gallery.length > 0 ? (
                       <>
-                        {/* Imagen Principal - Más grande */}
-                        <div className="mb-6 bg-cloud/30 flex items-center justify-center overflow-hidden rounded-sm" style={{ minHeight: '60vh', maxHeight: '70vh' }}>
+                        {/* Imagen Principal */}
+                        <div className="mb-4 md:mb-6 bg-cloud/30 flex items-center justify-center overflow-hidden rounded-sm h-[42vh] md:min-h-[60vh] md:max-h-[70vh]">
                           <motion.img
                             key={selectedImageIndex}
                             initial={{ opacity: 0, scale: 0.98 }}
@@ -128,9 +128,9 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                           />
                         </div>
 
-                        {/* Galería de Miniaturas - Mejorada */}
+                        {/* Miniaturas */}
                         {hasMultipleImages && (
-                          <div className="grid grid-cols-5 gap-3 mb-6">
+                          <div className="grid grid-cols-5 gap-2 md:gap-3 mb-4 md:mb-6">
                             {gallery.map((image, index) => (
                               <button
                                 key={index}
@@ -155,35 +155,43 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                           </div>
                         )}
 
-                        {/* Navegación de Imágenes - Mejorada */}
+                        {/* Navegación de Imágenes */}
                         {hasMultipleImages && (
-                          <div className="flex items-center justify-between mt-auto pt-6 border-t border-noir/10">
+                          <div className="flex items-center justify-between mt-auto pt-4 border-t border-noir/10">
+                            {/* Botón anterior — icono en mobile, texto en desktop */}
                             <button
                               onClick={() =>
                                 setSelectedImageIndex(
-                                  selectedImageIndex > 0
-                                    ? selectedImageIndex - 1
-                                    : gallery.length - 1
+                                  selectedImageIndex > 0 ? selectedImageIndex - 1 : gallery.length - 1
                                 )
                               }
-                              className="text-noir/70 hover:text-noir transition-all px-6 py-3 border-2 border-noir/30 hover:border-noir/60 bg-noir/5 hover:bg-noir/10 text-sm uppercase tracking-widest font-light"
+                              className="flex items-center justify-center w-9 h-9 md:w-auto md:h-auto border border-noir/30 hover:border-noir/60 bg-noir/5 hover:bg-noir/10 text-noir/70 hover:text-noir transition-all rounded-full md:rounded-none md:px-6 md:py-3"
+                              aria-label="Imagen anterior"
                             >
-                              ← Anterior
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="md:hidden" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                              </svg>
+                              <span className="hidden md:inline text-sm uppercase tracking-widest font-light">← Anterior</span>
                             </button>
+
                             <span className="text-sm text-noir/60 uppercase tracking-widest font-light">
                               {selectedImageIndex + 1} / {gallery.length}
                             </span>
+
+                            {/* Botón siguiente */}
                             <button
                               onClick={() =>
                                 setSelectedImageIndex(
-                                  selectedImageIndex < gallery.length - 1
-                                    ? selectedImageIndex + 1
-                                    : 0
+                                  selectedImageIndex < gallery.length - 1 ? selectedImageIndex + 1 : 0
                                 )
                               }
-                              className="text-noir/70 hover:text-noir transition-all px-6 py-3 border-2 border-noir/30 hover:border-noir/60 bg-noir/5 hover:bg-noir/10 text-sm uppercase tracking-widest font-light"
+                              className="flex items-center justify-center w-9 h-9 md:w-auto md:h-auto border border-noir/30 hover:border-noir/60 bg-noir/5 hover:bg-noir/10 text-noir/70 hover:text-noir transition-all rounded-full md:rounded-none md:px-6 md:py-3"
+                              aria-label="Imagen siguiente"
                             >
-                              Siguiente →
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" className="md:hidden" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+                              </svg>
+                              <span className="hidden md:inline text-sm uppercase tracking-widest font-light">Siguiente →</span>
                             </button>
                           </div>
                         )}
@@ -195,8 +203,8 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                     )}
                   </div>
 
-                  {/* Sección de Información - Derecha - Compacta */}
-                  <div className="p-6 overflow-y-auto" style={{ maxHeight: 'calc(95vh - 100px)' }}>
+                  {/* Sección de Información - Derecha */}
+                  <div className="p-4 md:p-6 pb-8">
                     {/* Descripción Corta */}
                     <div className="mb-6">
                       <h3 className="text-xs uppercase tracking-widest text-noir/50 mb-3 font-light">
