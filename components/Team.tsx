@@ -25,11 +25,6 @@ const teamMembers: TeamMember[] = [
     image: '/Equipo/Gustavo-Duque-Izquierdo.webp'
   },
   {
-    name: 'Jhonatan Jimenez',
-    role: 'Gerente de Proyectos',
-    image: '/Equipo/jhonatan-jimenez.jpeg'
-  },
-  {
     name: 'José David Fandiño',
     role: 'Arquitecto Junior',
     image: '/Equipo/Jose-David-Fandino.webp'
@@ -38,11 +33,6 @@ const teamMembers: TeamMember[] = [
     name: 'Karen Tovar',
     role: 'Contabilidad',
     image: '/Equipo/Karen-Tovar.webp'
-  },
-  {
-    name: 'Ingrid Kemes',
-    role: 'Administrativo',
-    image: '/Equipo/ingrid-kemes.jpeg'
   },
   {
     name: 'Lina Zhang',
@@ -60,8 +50,8 @@ const teamMembers: TeamMember[] = [
     image: '/Equipo/team02.webp'
   },
   {
-    name: 'Nombre Apellido',
-    role: 'Cargo',
+    name: 'Maru Mendoza',
+    role: 'Gerente Administrativa',
     image: '/Equipo/team03.webp'
   }
 ];

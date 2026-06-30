@@ -13,10 +13,10 @@ interface SEOHeadProps {
  * Útil para futuras páginas o secciones específicas
  */
 const SEOHead: React.FC<SEOHeadProps> = ({
-  title = 'Noble Architecture Studio | Creadores de Hitos Arquitectónicos',
+  title = 'Noble Proyectos | Estudio de Arquitectura en Cartagena y Bogotá',
   description = 'Estudio de arquitectura especializado en crear proyectos residenciales y comerciales que encarnan rectitud, dignidad y una presencia atemporal. Más de 20 años de experiencia en Cartagena y Bogotá.',
-  image = 'https://noble.com/image/hero-background.jpg',
-  url = 'https://noble.com',
+  image = 'https://nobleproyectos.com/image/hero-background.webp',
+  url = 'https://nobleproyectos.com',
   type = 'website'
 }) => {
   React.useEffect(() => {

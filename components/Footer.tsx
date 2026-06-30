@@ -34,9 +34,11 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold uppercase tracking-widest text-camel mb-4">Redes</h4>
             <ul className="space-y-3 text-sm text-noir/70">
-              <li><a href="#" className="hover:text-noir transition-colors">Instagram</a></li>
-              <li><a href="#" className="hover:text-noir transition-colors">LinkedIn</a></li>
-              <li><a href="#" className="hover:text-noir transition-colors">Twitter</a></li>
+              <li><a href="https://www.instagram.com/noble_proyectos/" target="_blank" rel="noopener noreferrer" className="hover:text-noir transition-colors">Instagram</a></li>
+              <li><a href="https://www.linkedin.com/in/noble-proyectos-260a62375/" target="_blank" rel="noopener noreferrer" className="hover:text-noir transition-colors">LinkedIn</a></li>
+              <li><a href="https://www.facebook.com/profile.php?id=61578608248209" target="_blank" rel="noopener noreferrer" className="hover:text-noir transition-colors">Facebook</a></li>
+              <li><a href="https://www.youtube.com/@Nobleproyectos" target="_blank" rel="noopener noreferrer" className="hover:text-noir transition-colors">YouTube</a></li>
+              <li><a href="https://co.pinterest.com/nobleproyectos/" target="_blank" rel="noopener noreferrer" className="hover:text-noir transition-colors">Pinterest</a></li>
             </ul>
           </div>
         </div>

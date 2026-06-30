@@ -4,9 +4,6 @@ import { motion, Variants, useScroll, useTransform } from 'framer-motion';
 const PerfectHero: React.FC = () => {
     const { scrollYProgress } = useScroll();
 
-    // Efectos parallax para el fondo
-    const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '25%']);
-    const backgroundScale = useTransform(scrollYProgress, [0, 1], [1, 1.05]);
     const overlayOpacity = useTransform(scrollYProgress, [0, 1], [0.15, 0.25]);
 
     const titleVariants: Variants = {
@@ -24,6 +21,7 @@ const PerfectHero: React.FC = () => {
             className="h-screen w-full relative overflow-hidden"
             style={{ backgroundColor: '#f2f2f1' }}
         >
+            <h1 className="sr-only">Noble Proyectos - Estudio de Arquitectura en Cartagena y Bogotá</h1>
             {/* Imagen de fondo que cubre completamente */}
             <motion.img
                 src="/image/hero-background.webp"

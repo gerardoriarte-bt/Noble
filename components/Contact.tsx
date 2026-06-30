@@ -25,12 +25,12 @@ const Contact: React.FC = () => {
                         ¿Tienes un proyecto en mente? Nos encantaría conocer tu visión. Contáctanos para comenzar la conversación.
                     </motion.p>
                     <motion.a
-                        href="mailto:studio@noble.com"
+                        href="mailto:estudio@nobleproyectos.com"
                         className="text-2xl md:text-3xl font-serif text-noir relative w-fit group"
                         variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0 } }}
                     >
                         <span>
-                            studio@noble.com
+                            estudio@nobleproyectos.com
                         </span>
                         <span className="absolute bottom-[-5px] left-0 h-px w-full bg-camel transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-in-out-circ"></span>
                     </motion.a>
