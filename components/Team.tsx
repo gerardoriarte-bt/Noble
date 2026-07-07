@@ -25,8 +25,8 @@ const teamMembers: TeamMember[] = [
     image: '/Equipo/Gustavo-Duque-Izquierdo.webp'
   },
   {
-    name: 'Nombre Apellido',
-    role: 'Cargo',
+    name: 'Julio Salazar',
+    role: 'Gerente Financiero',
     image: '/Equipo/team02.webp'
   },
   {
@@ -41,12 +41,12 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'Lina Zhang',
-    role: 'Cargo',
+    role: 'Arquitecta',
     image: '/Equipo/Lina-Zhang.webp'
   },
   {
-    name: 'Nombre Apellido',
-    role: 'Cargo',
+    name: 'Miguel Forero',
+    role: 'Administrativo',
     image: '/Equipo/team01.webp'
   },
   {
