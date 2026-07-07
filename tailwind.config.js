@@ -2,14 +2,16 @@
 export default {
   content: [
     "./index.html",
-    "./**/*.{js,ts,jsx,tsx}",
+    "./*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+    "./pages/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
       colors: {
         fossil: '#373c37',
         khaki: '#B2806d',
-        camel: '#b9a695',
+        camel: '#75604D',
         stone: '#e6dfda',
         cloud: '#f2f2f1',
         noir: '#121212',

@@ -461,7 +461,6 @@ const HorizontalTimeline: React.FC = () => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6 }}
-                  // @ts-ignore
                   className="mb-8"
                 >
                   <h3 className="text-sm uppercase tracking-widest text-noir/60 font-light">
@@ -480,7 +479,6 @@ const HorizontalTimeline: React.FC = () => {
                   scale: index === activeIndex ? 1 : 0.98
                 }}
                 transition={{ duration: 0.6, ease: 'easeOut' }}
-                // @ts-ignore
                 className="mb-6"
                 style={{
                   height: '40vh',
@@ -525,7 +523,6 @@ const HorizontalTimeline: React.FC = () => {
                     y: 0
                   }}
                   transition={{ duration: 0.6, delay: 0.1 }}
-                  // @ts-ignore
                   className="mb-4"
                   style={{ flexShrink: 0 }}
                 >
@@ -564,7 +561,6 @@ const HorizontalTimeline: React.FC = () => {
                     y: 0
                   }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  // @ts-ignore
                   className="mb-4 flex-1 overflow-y-auto"
                   style={{ minHeight: 0 }}
                 >
@@ -580,7 +576,6 @@ const HorizontalTimeline: React.FC = () => {
                     opacity: index === activeIndex ? 1 : 0.5
                   }}
                   transition={{ duration: 0.6, delay: 0.4 }}
-                  // @ts-ignore
                   className="h-px bg-noir/10 mb-4"
                   style={{ flexShrink: 0 }}
                 />
@@ -607,7 +602,6 @@ const HorizontalTimeline: React.FC = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.7 }}
-                  // @ts-ignore
                   className="mt-12 pt-8 border-t border-noir/10"
                 >
                   <a
@@ -717,7 +711,6 @@ const HorizontalTimeline: React.FC = () => {
           ====================================================================== */}
       <div className="hidden md:flex items-center justify-center gap-6 py-6 bg-cloud border-t border-noir/10">
         <motion.button
-          // @ts-ignore
           onClick={prevProject}
           disabled={activeIndex === 0}
           className={`group flex items-center justify-center w-14 h-14 rounded-full border-2 border-noir/30 bg-cloud transition-all ${activeIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110'
@@ -744,7 +737,6 @@ const HorizontalTimeline: React.FC = () => {
         </div>
 
         <motion.button
-          // @ts-ignore
           onClick={nextProject}
           disabled={activeIndex === timelineData.length - 1}
           className={`group flex items-center justify-center w-14 h-14 rounded-full border-2 border-noir/30 bg-cloud transition-all ${activeIndex === timelineData.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110'

@@ -5,8 +5,9 @@
 /* Fuente personalizada CasagrandeCasabau */
 @font-face {
   font-family: 'CasagrandeCasabau';
-  src: url('/font/CasagrandeCasabau-Bold.ttf') format('truetype');
-  font-weight: bold;
+  src: url('/font/CasagrandeCasabau-Bold.woff2') format('woff2'),
+       url('/font/CasagrandeCasabau-Bold.ttf') format('truetype');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }

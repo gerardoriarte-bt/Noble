@@ -24,11 +24,8 @@ const NavLink: React.FC<{ href: string, children: React.ReactNode }> = ({ href, 
 
     return (
         <motion.a
-            // @ts-ignore
             href={href}
-            // @ts-ignore
             onClick={handleClick}
-            // @ts-ignore
             className="relative text-xs uppercase tracking-wider transition-colors duration-300 text-noir"
             whileHover={{
                 opacity: 0.8
@@ -37,7 +34,6 @@ const NavLink: React.FC<{ href: string, children: React.ReactNode }> = ({ href, 
         >
             {children}
             <motion.div
-                // @ts-ignore
                 className="absolute bottom-[-4px] left-0 right-0 h-px bg-camel"
                 variants={{
                     rest: { scaleX: 0 },
@@ -78,11 +74,8 @@ const MobileNavLink: React.FC<{ href: string, children: React.ReactNode, onClick
 
     return (
         <motion.a
-            // @ts-ignore
             href={href}
-            // @ts-ignore
             onClick={handleClick}
-            // @ts-ignore
             className="text-3xl font-serif text-noir/80 hover:text-noir transition-colors duration-300"
             variants={{
                 hidden: { opacity: 0, y: 20 },
@@ -114,7 +107,6 @@ const Header: React.FC = () => {
     return (
         <>
             <motion.header
-                // @ts-ignore
                 className="fixed top-0 left-0 right-0 z-50 w-full"
                 style={{
                     backgroundColor: 'rgba(242, 242, 241, 0.05)',
@@ -159,9 +151,7 @@ const Header: React.FC = () => {
                         <NavLink href="/#proyectos">Proyectos</NavLink>
                         <NavLink href="/#equipo">Equipo</NavLink>
                         <motion.a
-                            // @ts-ignore
                             href="/#contact"
-                            // @ts-ignore
                             onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                                 e.preventDefault();
                                 const element = document.getElementById('contact');
@@ -175,7 +165,6 @@ const Header: React.FC = () => {
                                     });
                                 }
                             }}
-                            // @ts-ignore
                             className="text-noir text-xs uppercase tracking-wider font-medium px-4 py-2"
                             whileHover={{ scale: 1.05, filter: 'brightness(1.1)' }}
                             whileTap={{ scale: 0.95 }}
@@ -188,16 +177,13 @@ const Header: React.FC = () => {
                     {/* Mobile Menu Button */}
                     <div className="md:hidden z-50">
                         <motion.button
-                            // @ts-ignore
                             onClick={toggleMobileMenu}
-                            // @ts-ignore
                             className="w-7 h-7 relative focus:outline-none"
                             animate={mobileMenuOpen ? "open" : "closed"}
                             aria-label="Toggle navigation menu"
                             aria-expanded={mobileMenuOpen}
                         >
                             <motion.span
-                                // @ts-ignore
                                 className="absolute h-0.5 w-5 block rounded-full bg-noir"
                                 variants={{
                                     closed: { top: '35%', rotate: 0 },
@@ -206,7 +192,6 @@ const Header: React.FC = () => {
                                 transition={{ duration: 0.3, ease: 'easeInOut' }}
                             />
                             <motion.span
-                                // @ts-ignore
                                 className="absolute h-0.5 w-5 block rounded-full bg-noir"
                                 variants={{
                                     closed: { top: '65%', rotate: 0 },
@@ -223,7 +208,6 @@ const Header: React.FC = () => {
             <AnimatePresence>
                 {mobileMenuOpen && (
                     <motion.div
-                        // @ts-ignore
                         className="fixed inset-0 bg-cloud/95 backdrop-blur-lg z-40 flex flex-col justify-center items-center md:hidden"
                         variants={mobileMenuVariants}
                         initial="hidden"
@@ -235,9 +219,7 @@ const Header: React.FC = () => {
                             <MobileNavLink href="/#proyectos" onClick={toggleMobileMenu}>Proyectos</MobileNavLink>
                             <MobileNavLink href="/#equipo" onClick={toggleMobileMenu}>Equipo</MobileNavLink>
                             <motion.a
-                                // @ts-ignore
                                 href="/#contact"
-                                // @ts-ignore
                                 onClick={(e: React.MouseEvent<HTMLAnchorElement>) => {
                                     toggleMobileMenu();
                                     e.preventDefault();
@@ -254,7 +236,6 @@ const Header: React.FC = () => {
                                         }
                                     }, 100);
                                 }}
-                                // @ts-ignore
                                 className="text-noir text-xl font-serif mt-8 px-8 py-4"
                                 variants={{
                                     hidden: { opacity: 0, y: 20 },
