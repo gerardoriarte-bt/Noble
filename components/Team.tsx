@@ -25,9 +25,14 @@ const teamMembers: TeamMember[] = [
     image: '/Equipo/Gustavo-Duque-Izquierdo.webp'
   },
   {
-    name: 'José David Fandiño',
-    role: 'Arquitecto Junior',
-    image: '/Equipo/Jose-David-Fandino.webp'
+    name: 'Nombre Apellido',
+    role: 'Cargo',
+    image: '/Equipo/team02.webp'
+  },
+  {
+    name: 'Maru Mendoza',
+    role: 'Gerente Administrativa',
+    image: '/Equipo/team03.webp'
   },
   {
     name: 'Karen Tovar',
@@ -45,14 +50,9 @@ const teamMembers: TeamMember[] = [
     image: '/Equipo/team01.webp'
   },
   {
-    name: 'Nombre Apellido',
-    role: 'Cargo',
-    image: '/Equipo/team02.webp'
-  },
-  {
-    name: 'Maru Mendoza',
-    role: 'Gerente Administrativa',
-    image: '/Equipo/team03.webp'
+    name: 'José David Fandiño',
+    role: 'Arquitecto Junior',
+    image: '/Equipo/Jose-David-Fandino.webp'
   }
 ];
 

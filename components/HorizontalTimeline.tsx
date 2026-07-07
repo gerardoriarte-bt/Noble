@@ -413,7 +413,8 @@ const HorizontalTimeline: React.FC = () => {
   // [RENDER] JSX Principal
   // ============================================================================
   return (
-    <section id="proyectos" className="relative bg-cloud md:flex md:overflow-hidden md:h-[80vh] md:max-h-[80vh]">
+    <section id="proyectos" className="relative bg-cloud">
+    <div className="md:flex md:overflow-hidden md:h-[80vh] md:max-h-[80vh]">
       {/* ======================================================================
           [COMPONENTE] Sección izquierda - Carrusel vertical de proyectos completos (1/3 del ancho)
           ====================================================================== */}
@@ -709,6 +710,60 @@ const HorizontalTimeline: React.FC = () => {
           </div>
         </div>
       </div>
+    </div>
+
+      {/* ======================================================================
+          [COMPONENTE] Navegación de proyectos - Barra fija debajo del carrusel - Solo Desktop
+          ====================================================================== */}
+      <div className="hidden md:flex items-center justify-center gap-6 py-6 bg-cloud border-t border-noir/10">
+        <motion.button
+          // @ts-ignore
+          onClick={prevProject}
+          disabled={activeIndex === 0}
+          className={`group flex items-center justify-center w-14 h-14 rounded-full border-2 border-noir/30 bg-cloud transition-all ${activeIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110'
+            }`}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Proyecto anterior"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className={`transition-colors duration-300 ${activeIndex === 0 ? 'stroke-noir/40' : 'stroke-noir group-hover:stroke-cloud'}`}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          </svg>
+        </motion.button>
+
+        <div className="flex items-center gap-2 px-5 py-2 rounded-full border border-noir/10">
+          <span className="text-sm font-medium text-noir/80">{activeIndex + 1}</span>
+          <span className="text-xs text-noir/30">/</span>
+          <span className="text-xs text-noir/40">{timelineData.length}</span>
+        </div>
+
+        <motion.button
+          // @ts-ignore
+          onClick={nextProject}
+          disabled={activeIndex === timelineData.length - 1}
+          className={`group flex items-center justify-center w-14 h-14 rounded-full border-2 border-noir/30 bg-cloud transition-all ${activeIndex === timelineData.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110'
+            }`}
+          whileTap={{ scale: 0.9 }}
+          aria-label="Siguiente proyecto"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            className={`transition-colors duration-300 ${activeIndex === timelineData.length - 1 ? 'stroke-noir/40' : 'stroke-noir group-hover:stroke-cloud'}`}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
+          </svg>
+        </motion.button>
+      </div>
 
       {/* ======================================================================
           [COMPONENTE] Versión mobile - Cards simplificadas - Solo Mobile
@@ -880,59 +935,6 @@ const HorizontalTimeline: React.FC = () => {
             </svg>
           </button>
         </div>
-      </div>
-
-      {/* ======================================================================
-          [COMPONENTE] Controles de navegación - Flechas flotantes
-          ====================================================================== */}
-      <div className="absolute bottom-12 right-12 z-50 flex items-center gap-4 pointer-events-auto hidden md:flex">
-        <div className="flex items-center gap-2 bg-cloud/80 backdrop-blur-md border border-noir/10 px-4 py-3 rounded-full shadow-lg">
-          <span className="text-sm font-medium text-noir/80">{activeIndex + 1}</span>
-          <span className="text-xs text-noir/30">/</span>
-          <span className="text-xs text-noir/40">{timelineData.length}</span>
-        </div>
-
-        <motion.button
-          // @ts-ignore
-          onClick={prevProject}
-          disabled={activeIndex === 0}
-          className={`group flex items-center justify-center w-14 h-14 rounded-full border border-noir/10 bg-cloud/80 backdrop-blur-md transition-all ${activeIndex === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110 shadow-lg'
-            }`}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Proyecto anterior"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            className={`transition-colors duration-300 ${activeIndex === 0 ? 'stroke-noir/40' : 'stroke-noir group-hover:stroke-cloud'}`}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M15 18L9 12L15 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-          </svg>
-        </motion.button>
-
-        <motion.button
-          // @ts-ignore
-          onClick={nextProject}
-          disabled={activeIndex === timelineData.length - 1}
-          className={`group flex items-center justify-center w-14 h-14 rounded-full border border-noir/10 bg-cloud/80 backdrop-blur-md transition-all ${activeIndex === timelineData.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-noir hover:border-noir hover:scale-110 shadow-lg'
-            }`}
-          whileTap={{ scale: 0.9 }}
-          aria-label="Siguiente proyecto"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            className={`transition-colors duration-300 ${activeIndex === timelineData.length - 1 ? 'stroke-noir/40' : 'stroke-noir group-hover:stroke-cloud'}`}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M9 18L15 12L9 6" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" />
-          </svg>
-        </motion.button>
       </div>
 
       <ProjectModal
