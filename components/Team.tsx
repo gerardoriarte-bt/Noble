@@ -35,7 +35,7 @@ const teamMembers: TeamMember[] = [
     image: '/Equipo/team03.webp'
   },
   {
-    name: 'Karen Tovar',
+    name: 'Yeni Briceño',
     role: 'Contabilidad',
     image: '/Equipo/Karen-Tovar.webp'
   },
@@ -51,7 +51,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: 'José David Fandiño',
-    role: 'Arquitecto Junior',
+    role: 'Arquitecto',
     image: '/Equipo/Jose-David-Fandino.webp'
   }
 ];
