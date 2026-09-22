@@ -65,9 +65,9 @@ const Metrics: React.FC = () => {
                 {metric.prefix}
                 {isInView && <AnimatedNumber value={metric.value} />}
               </p>
-              <h3 className="mt-3 text-xs md:text-sm uppercase tracking-wider text-noir/70 max-w-[200px] mx-auto leading-relaxed">
+              <p className="mt-3 text-xs md:text-sm uppercase tracking-wider text-noir/70 max-w-[200px] mx-auto leading-relaxed">
                 {metric.label}
-              </h3>
+              </p>
             </motion.div>
           ))}
         </div>

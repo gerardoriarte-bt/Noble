@@ -485,9 +485,9 @@ const HorizontalTimeline: React.FC = () => {
                   transition={{ duration: 0.6 }}
                   className="mb-8"
                 >
-                  <h3 className="text-sm uppercase tracking-widest text-noir/60 font-light">
+                  <h2 className="text-sm uppercase tracking-widest text-noir/60 font-light">
                     Proyectos
-                  </h3>
+                  </h2>
                 </motion.div>
               )}
 
@@ -518,6 +518,8 @@ const HorizontalTimeline: React.FC = () => {
               >
                 <img
                   src={item.verticalImage || item.image}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
                   alt={`Proyecto ${item.title} - ${item.location} - ${item.year} | Noble Architecture Studio`}
                   style={{
                     width: '100%',
@@ -548,9 +550,9 @@ const HorizontalTimeline: React.FC = () => {
                   className="mb-4"
                   style={{ flexShrink: 0 }}
                 >
-                  <h2 className="text-3xl md:text-4xl font-serif text-noir font-light mb-3">
+                  <h3 className="text-3xl md:text-4xl font-serif text-noir font-light mb-3">
                     {item.title}
-                  </h2>
+                  </h3>
                   
                   {/* [SUB-COMPONENTE] Botón para abrir modal - Debajo del título */}
                   <motion.div
@@ -627,7 +629,7 @@ const HorizontalTimeline: React.FC = () => {
                   className="mt-12 pt-8 border-t border-noir/10"
                 >
                   <a
-                    href="#"
+                    href="/#equipo"
                     className="text-sm text-noir/60 hover:text-noir transition-colors underline underline-offset-4"
                   >
                     Conoce Más Sobre Nosotros
@@ -697,6 +699,8 @@ const HorizontalTimeline: React.FC = () => {
                       {/* [ELEMENTO] Imagen del proyecto */}
                       <img
                         src={item.horizontalImage || item.image}
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
                         alt={`Proyecto ${item.title} - ${item.location} - ${item.year} | Noble Architecture Studio`}
                         className="w-full h-full object-contain"
                         style={{
@@ -847,6 +851,8 @@ const HorizontalTimeline: React.FC = () => {
                   <div className="relative w-full" style={{ height: '45vh', minHeight: '280px' }}>
                     <img
                       src={item.image}
+                      loading={index === 0 ? 'eager' : 'lazy'}
+                      decoding="async"
                       alt={`Proyecto ${item.title} - ${item.location} - ${item.year} | Noble Architecture Studio`}
                       className="w-full h-full object-cover"
                     />
@@ -857,9 +863,9 @@ const HorizontalTimeline: React.FC = () => {
                     {/* [SUB-COMPONENTE] Título, año y ubicación */}
                     <div className="mb-4">
                       <div className="flex items-center justify-between mb-2">
-                        <h4 className="text-2xl font-serif text-noir font-light">
+                        <h3 className="text-2xl font-serif text-noir font-light">
                           {item.title}
-                        </h4>
+                        </h3>
                         <span className="text-xs text-noir/60 font-light tracking-wider">
                           {item.year}
                         </span>

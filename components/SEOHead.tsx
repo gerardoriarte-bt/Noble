@@ -15,7 +15,7 @@ interface SEOHeadProps {
 const SEOHead: React.FC<SEOHeadProps> = ({
   title = 'Noble Proyectos | Estudio de Arquitectura en Cartagena y Bogotá',
   description = 'Estudio de arquitectura especializado en crear proyectos residenciales y comerciales que encarnan rectitud, dignidad y una presencia atemporal. Más de 20 años de experiencia en Cartagena y Bogotá.',
-  image = 'https://nobleproyectos.com/image/hero-background.webp',
+  image = 'https://nobleproyectos.com/image/og-image.jpg',
   url = 'https://nobleproyectos.com',
   type = 'website'
 }) => {

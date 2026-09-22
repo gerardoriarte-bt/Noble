@@ -1,51 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-  
-  <!-- Homepage -->
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://nobleproyectos.com/</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-09-22</lastmod>
     <image:image>
       <image:loc>https://nobleproyectos.com/image/hero-background.webp</image:loc>
-      <image:title>Noble Proyectos - Proyectos arquitectónicos en Cartagena y Bogotá</image:title>
-      <image:caption>Estudio de arquitectura especializado en crear proyectos residenciales y comerciales</image:caption>
+      <image:title>Noble Proyectos - Estudio de arquitectura en Cartagena y Bogotá</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/CASA-PIZANO/IMG-GENERAL.webp</image:loc>
+      <image:title>Proyecto Casa Pizano - El Chicó, Bogotá (fachada)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/CASA-PIZANO/IMG-INTERNA.webp</image:loc>
+      <image:title>Proyecto Casa Pizano - El Chicó, Bogotá (interior)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/DOMINIQUE/IMG-GENERAL.webp</image:loc>
+      <image:title>Proyecto Dominique - Cartagena de Indias (fachada)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/DOMINIQUE/IMG-INTERNA.webp</image:loc>
+      <image:title>Proyecto Dominique - Cartagena de Indias (interior)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/MARTINIQUE/IMG-GENERAL.webp</image:loc>
+      <image:title>Proyecto Martinique - Cartagena de Indias (fachada)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/MARTINIQUE/IMG-INTERNA.webp</image:loc>
+      <image:title>Proyecto Martinique - Cartagena de Indias (interior)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/ANTIQUE/IMG-GENERAL.webp</image:loc>
+      <image:title>Proyecto Antique - Bogotá (fachada)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/ANTIQUE/IMG-INTERNA.webp</image:loc>
+      <image:title>Proyecto Antique - Bogotá (interior)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/BARUQ/PLANTA-BARUQ-general.webp</image:loc>
+      <image:title>Proyecto Baruq - Barú, Cartagena (fachada)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/BARUQ/IMG-INTERNA.webp</image:loc>
+      <image:title>Proyecto Baruq - Barú, Cartagena (interior)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/EMAUS/IMG-GENERAL.webp</image:loc>
+      <image:title>Proyecto Emaus - Bogotá (fachada)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/EMAUS/IMG-INTERNA.webp</image:loc>
+      <image:title>Proyecto Emaus - Bogotá (interior)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/SERREZUELA/IMG-GENERAL.webp</image:loc>
+      <image:title>Proyecto Serrezuela - Cartagena de Indias (fachada)</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://nobleproyectos.com/Proyectos/SERREZUELA/IMG-INTERNA.webp</image:loc>
+      <image:title>Proyecto Serrezuela - Cartagena de Indias (interior)</image:title>
     </image:image>
   </url>
-  
-  <!-- Secciones principales (anclas) -->
-  <url>
-    <loc>https://nobleproyectos.com/#inicio</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://nobleproyectos.com/#proyectos</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  
-  <url>
-    <loc>https://nobleproyectos.com/#equipo</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://nobleproyectos.com/#contact</loc>
-    <lastmod>2025-06-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
 </urlset>
-
