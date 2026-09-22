@@ -10,6 +10,7 @@ interface ProjectModalProps {
   project: {
     year: number;
     title: string;
+    slug?: string;
     description: string;
     location: string;
     detailedDescription?: string;
@@ -320,6 +321,14 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ isOpen, onClose, project })
                           <p className="text-noir font-light">{project.location}</p>
                         </div>
                       </div>
+                      {project.slug && (
+                        <a
+                          href={`/proyecto/${project.slug}`}
+                          className="inline-block mt-6 text-sm text-noir/60 hover:text-noir transition-colors underline underline-offset-4"
+                        >
+                          Ver página del proyecto →
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

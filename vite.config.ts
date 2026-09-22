@@ -1,7 +1,7 @@
 import path from 'path';
 import { defineConfig, loadEnv } from 'vite';
 
-export default defineConfig(({ mode }) => {
+export default defineConfig(({ mode, isSsrBuild }) => {
     const env = loadEnv(mode, '.', '');
     return {
       base: '/',
@@ -19,7 +19,8 @@ export default defineConfig(({ mode }) => {
         assetsDir: 'assets',
         sourcemap: false,
         minify: 'esbuild',
-        rollupOptions: {
+        // El bundle SSR (pre-renderizado) deja las dependencias como externas: sin manualChunks
+        rollupOptions: isSsrBuild ? {} : {
           output: {
             manualChunks: {
               'react-vendor': ['react', 'react-dom'],

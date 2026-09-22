@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ```bash
 npm run dev        # Start dev server at http://localhost:5173
-npm run build      # Build to dist/
+npm run build      # Build to dist/ (client build + SSR bundle + prerender of every route)
 npm run preview    # Preview the production build locally
 ```
 
@@ -14,15 +14,22 @@ No linting or test scripts are configured.
 
 ## Architecture
 
-Single-page React + TypeScript app built with Vite. There is no router library — `App.tsx` uses a manual `switch` on `window.location.pathname`. Currently only one route (`/`) renders `HomePage`.
+React + TypeScript app built with Vite, pre-rendered to static HTML at build time. There is no router library — `App.tsx` receives a `path` prop and resolves it with `resolveRoute()` from `seo/head.ts`:
+
+- `/` → `HomePage`
+- `/proyecto/<slug>` → `ProjectPage` (one page per project; singular `proyecto` to avoid a case-insensitive clash with the `public/Proyectos/` image folder)
+- anything else → `NotFoundPage` (published as `404.html`)
+
+**Data** lives in `data/projects.ts` (with `slug` and `seoDescription`) and `data/team.ts`. These are the single source for the carousel, the project pages, the schema.org JSON-LD and the sitemap — adding a project there is enough.
+
+**Pre-rendering:** `npm run build` runs `vite build`, then `vite build --ssr entry-server.tsx --outDir dist-ssr`, then `scripts/prerender.mjs`, which renders each route with `renderToString`, replaces the `<!--seo:start-->…<!--seo:end-->` block and `<!--app-html-->` in `dist/index.html`, and writes `dist/proyecto/<slug>.html`, `dist/404.html` and `dist/sitemap.xml`. `index.tsx` hydrates when the root already has markup (production) and does a normal render otherwise (dev). Per-route `<head>` tags and JSON-LD are built in `seo/head.ts`. Code that runs during render must not touch `window`/`document` (use effects/handlers).
 
 **Component layout (top to bottom on the page):**
 
 ```
 App.tsx
-  SEOHead          — dynamically sets document title + OG meta tags via useEffect
   Header
-  HomePage
+  HomePage         (or ProjectPage / NotFoundPage)
     PerfectHero    — full-screen hero with parallax scroll (framer-motion useScroll/useTransform)
     Metrics
     HorizontalTimeline  — the main projects section (see below)
@@ -37,7 +44,7 @@ App.tsx
 - Both carousels share `activeIndex` state and use `isSyncingRef` to prevent feedback loops during programmatic scroll
 - Mobile: replaces both panels with a single full-width horizontal card carousel
 
-Project data is co-located as `timelineData` array inside `HorizontalTimeline.tsx` — no separate data file.
+The "Ver Detalles" buttons are real links to `/proyecto/<slug>` (crawlable) that open the modal on a normal click.
 
 ## Styling
 
@@ -75,6 +82,6 @@ public/
 
 ## Build & Deployment
 
-Vite bundles output to `dist/` with manual chunks splitting React (`react-vendor`) and Framer Motion (`framer-motion`) into separate files. The site is deployed to Vercel. `public/_redirects` handles SPA routing fallback.
+Vite bundles output to `dist/` with manual chunks splitting React (`react-vendor`) and Framer Motion (`framer-motion`) into separate files. The site is deployed to Vercel. `vercel.json` sets `cleanUrls` so `/proyecto/<slug>` serves `proyecto/<slug>.html`. (`public/_redirects` is a Netlify file and has no effect on Vercel.)
 
 `deploy-noble.sh` and `ec2-setup-noble.sh` are legacy scripts for an EC2 deployment — not the current deployment path.

@@ -52,3 +52,6 @@ IMG/
 Logos/
 roca/
 
+
+# Pre-render (bundle SSR temporal)
+dist-ssr/

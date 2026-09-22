@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
@@ -9,9 +8,15 @@ if (!rootElement) {
   throw new Error("Could not find root element to mount to");
 }
 
-const root = ReactDOM.createRoot(rootElement);
-root.render(
+const app = (
   <React.StrictMode>
-    <App />
+    <App path={window.location.pathname} />
   </React.StrictMode>
 );
+
+// En producción el HTML viene pre-renderizado: se hidrata. En dev el root está vacío.
+if (rootElement.firstElementChild) {
+  ReactDOM.hydrateRoot(rootElement, app);
+} else {
+  ReactDOM.createRoot(rootElement).render(app);
+}

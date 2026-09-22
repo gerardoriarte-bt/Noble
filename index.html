@@ -4,42 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Primary Meta Tags -->
+    <!-- SEO por ruta: scripts/prerender.mjs reemplaza este bloque con seo/head.ts -->
+    <!--seo:start-->
     <title>Noble Proyectos | Estudio de Arquitectura en Cartagena y Bogotá</title>
-    <meta name="title" content="Noble Proyectos | Estudio de Arquitectura en Cartagena y Bogotá" />
-    <meta name="description" content="Estudio de arquitectura especializado en crear proyectos residenciales y comerciales que encarnan rectitud, dignidad y una presencia atemporal. Más de 20 años de experiencia en Cartagena y Bogotá." />
+    <!--seo:end-->
     <meta name="author" content="Noble Architecture Studio" />
-    <meta name="robots" content="index, follow" />
-    <meta name="language" content="Spanish" />
-    
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://nobleproyectos.com" />
-    
+
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nobleproyectos.com" />
-    <meta property="og:title" content="Noble Proyectos | Estudio de Arquitectura en Cartagena y Bogotá" />
-    <meta property="og:description" content="Estudio de arquitectura especializado en crear proyectos residenciales y comerciales que encarnan rectitud, dignidad y una presencia atemporal. Más de 20 años de experiencia en Cartagena y Bogotá." />
-    <meta property="og:image" content="https://nobleproyectos.com/image/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/jpeg" />
-    <meta property="og:image:alt" content="Noble Architecture Studio - Proyectos arquitectónicos de excelencia" />
-    <meta property="og:site_name" content="Noble Proyectos" />
-    <meta property="og:locale" content="es_CO" />
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://nobleproyectos.com" />
-    <meta name="twitter:title" content="Noble Proyectos | Estudio de Arquitectura en Cartagena y Bogotá" />
-    <meta name="twitter:description" content="Estudio de arquitectura especializado en crear proyectos residenciales y comerciales que encarnan rectitud, dignidad y una presencia atemporal." />
-    <meta name="twitter:image" content="https://nobleproyectos.com/image/og-image.jpg" />
-    <meta name="twitter:image:alt" content="Noble Architecture Studio - Proyectos arquitectónicos de excelencia" />
     
     <!-- Additional Meta Tags -->
     <meta name="theme-color" content="#f2f2f1" />
@@ -52,213 +26,9 @@
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/index.css">
-    <link rel="preload" as="image" href="/image/hero-background.webp" fetchpriority="high" />
 </head>
 <body>
-    <div id="root"></div>
+    <div id="root"><!--app-html--></div>
     <script type="module" src="/index.tsx"></script>
-    
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["Organization", "LocalBusiness"],
-      "name": "Noble Proyectos",
-      "alternateName": "Noble Architecture Studio",
-      "url": "https://nobleproyectos.com",
-      "logo": "https://nobleproyectos.com/Noble-logo-blanco.png",
-      "description": "Estudio de arquitectura especializado en crear proyectos residenciales y comerciales que encarnan rectitud, dignidad y una presencia atemporal.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "CO",
-        "addressLocality": "Cartagena de Indias",
-        "addressRegion": "Bolívar"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer service",
-        "email": "estudio@nobleproyectos.com"
-      },
-      "sameAs": [
-        "https://www.instagram.com/noble_proyectos/",
-        "https://www.linkedin.com/in/noble-proyectos-260a62375/",
-        "https://www.facebook.com/profile.php?id=61578608248209",
-        "https://www.youtube.com/@Nobleproyectos",
-        "https://co.pinterest.com/nobleproyectos/"
-      ],
-      "foundingDate": "2004",
-      "numberOfEmployees": {
-        "@type": "QuantitativeValue",
-        "value": "8"
-      },
-      "areaServed": [
-        { "@type": "City", "name": "Cartagena de Indias" },
-        { "@type": "City", "name": "Bogotá" },
-        { "@type": "Country", "name": "Colombia" }
-      ],
-      "employee": [
-        { "@type": "Person", "name": "Juan Carlos Martinez", "jobTitle": "Gerente General", "image": "https://nobleproyectos.com/Equipo/Juan-Carlos-Martinez.webp" },
-        { "@type": "Person", "name": "Gustavo Duque Izquierdo", "jobTitle": "Gerente de Diseño", "image": "https://nobleproyectos.com/Equipo/Gustavo-Duque-Izquierdo.webp" },
-        { "@type": "Person", "name": "Julio Salazar", "jobTitle": "Gerente Financiero", "image": "https://nobleproyectos.com/Equipo/Julio-Salazar.webp" },
-        { "@type": "Person", "name": "Maru Mendoza", "jobTitle": "Gerente Administrativa", "image": "https://nobleproyectos.com/Equipo/Maru-Mendoza.webp" },
-        { "@type": "Person", "name": "Yeni Briceño", "jobTitle": "Contabilidad", "image": "https://nobleproyectos.com/Equipo/Karen-Tovar.webp" },
-        { "@type": "Person", "name": "Lina Zhang", "jobTitle": "Arquitecta", "image": "https://nobleproyectos.com/Equipo/Lina-Zhang.webp" },
-        { "@type": "Person", "name": "Miguel Forero", "jobTitle": "Administrativo", "image": "https://nobleproyectos.com/Equipo/Miguel-Forero.webp" },
-        { "@type": "Person", "name": "José David Fandiño", "jobTitle": "Arquitecto", "image": "https://nobleproyectos.com/Equipo/Jose-David-Fandino.webp" }
-      ]
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Noble Proyectos",
-      "url": "https://nobleproyectos.com"
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "Proyectos de Noble Proyectos",
-      "url": "https://nobleproyectos.com/#proyectos",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Casa Pizano",
-            "description": "Torre residencial boutique de 7 plantas con entre 10 y 11 apartamentos en un lote de 806,3 m². Inicio de obra en octubre de 2026.",
-            "image": "https://nobleproyectos.com/Proyectos/CASA-PIZANO/IMG-GENERAL.webp",
-            "dateCreated": "2026",
-            "locationCreated": {
-              "@type": "Place",
-              "name": "El Chicó, Bogotá"
-            },
-            "creator": {
-              "@type": "Organization",
-              "name": "Noble Proyectos"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Dominique",
-            "description": "Edificio de 14 pisos con 120 apartamentos en el barrio Cielomar, a 200 metros de la playa de la zona norte.",
-            "image": "https://nobleproyectos.com/Proyectos/DOMINIQUE/IMG-GENERAL.webp",
-            "dateCreated": "2022",
-            "locationCreated": {
-              "@type": "Place",
-              "name": "Cielomar, Cartagena de Indias"
-            },
-            "creator": {
-              "@type": "Organization",
-              "name": "Noble Proyectos"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Martinique",
-            "description": "Edificio de 15 pisos con 99 apartamentos en el barrio Cielomar, a 200 metros de la playa de la zona norte.",
-            "image": "https://nobleproyectos.com/Proyectos/MARTINIQUE/IMG-GENERAL.webp",
-            "dateCreated": "2019",
-            "locationCreated": {
-              "@type": "Place",
-              "name": "Cielomar, Cartagena de Indias"
-            },
-            "creator": {
-              "@type": "Organization",
-              "name": "Noble Proyectos"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Antique",
-            "description": "Edificio de apartamentos de 5 pisos y 7.200 m² de construcción en el barrio Nuevo Country, con zona verde a lo ancho del proyecto.",
-            "image": "https://nobleproyectos.com/Proyectos/ANTIQUE/IMG-GENERAL.webp",
-            "dateCreated": "2020",
-            "locationCreated": {
-              "@type": "Place",
-              "name": "Nuevo Country, Bogotá"
-            },
-            "creator": {
-              "@type": "Organization",
-              "name": "Noble Proyectos"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 5,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Baruq",
-            "description": "Proyecto de 360 unidades en 3 edificios de 5 pisos más altillo, para uso residencial y turístico, en Barú.",
-            "image": "https://nobleproyectos.com/Proyectos/BARUQ/PLANTA-BARUQ-general.webp",
-            "dateCreated": "2023",
-            "locationCreated": {
-              "@type": "Place",
-              "name": "Barú, Cartagena"
-            },
-            "creator": {
-              "@type": "Organization",
-              "name": "Noble Proyectos"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 6,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Emaus",
-            "description": "Diseño, gerencia y construcción de la Parroquia Discípulos de Emaús: 1.500 m² de facilidades parroquiales.",
-            "image": "https://nobleproyectos.com/Proyectos/EMAUS/IMG-GENERAL.webp",
-            "dateCreated": "2019",
-            "locationCreated": {
-              "@type": "Place",
-              "name": "Bogotá"
-            },
-            "creator": {
-              "@type": "Organization",
-              "name": "Noble Proyectos"
-            }
-          }
-        },
-        {
-          "@type": "ListItem",
-          "position": 7,
-          "item": {
-            "@type": "CreativeWork",
-            "name": "Serrezuela",
-            "description": "Centro comercial de lujo Plaza La Serrezuela: 22.400 m² construidos con centro cultural y centro de convenciones.",
-            "image": "https://nobleproyectos.com/Proyectos/SERREZUELA/IMG-GENERAL.webp",
-            "dateCreated": "2019",
-            "locationCreated": {
-              "@type": "Place",
-              "name": "Cartagena de Indias"
-            },
-            "creator": {
-              "@type": "Organization",
-              "name": "Noble Proyectos"
-            }
-          }
-        }
-      ]
-    }
-    </script>
 </body>
 </html>
