@@ -23,6 +23,28 @@ interface TimelineItem {
 // ============================================================================
 const timelineData: TimelineItem[] = [
   {
+    year: 2026,
+    title: "Casa Pizano",
+    description: "Un proyecto residencial boutique donde la arquitectura se integra con la naturaleza para crear una experiencia de vida exclusiva.",
+    image: "/Proyectos/CASA-PIZANO/IMG-GENERAL.webp",
+    horizontalImage: "/Proyectos/CASA-PIZANO/IMG-GENERAL.webp",
+    verticalImage: "/Proyectos/CASA-PIZANO/IMG-INTERNA.webp",
+    location: "El Chicó, Bogotá",
+    detailedDescription: "Un proyecto residencial boutique donde la arquitectura se integra con la naturaleza para crear una experiencia de vida exclusiva. Ubicado en El Chicó, Bogotá, en una zona de alto valor residencial y comercial.\n\nCasa Pizano se desarrolla en un lote de 806,3 m² y contempla una torre residencial boutique de 7 plantas, con entre 10 y 11 apartamentos de diferentes tipologías. El proyecto combina espacios privados y áreas comunes como terraza, gimnasio, zona BBQ, salón, oficina, lobby y piso multifuncional.\n\nInicio de obra: octubre 2026.",
+    gallery: [
+      "/Proyectos/CASA-PIZANO/IMG-GENERAL.webp",
+      "/Proyectos/CASA-PIZANO/IMG-INTERNA.webp"
+    ],
+    specifications: [
+      "Torre residencial boutique de 7 plantas",
+      "Entre 10 y 11 apartamentos",
+      "Lote de 806,3 m²",
+      "Terraza, gimnasio y zona BBQ",
+      "Salón, oficina, lobby y piso multifuncional",
+      "Inicio de obra: octubre 2026"
+    ]
+  },
+  {
     year: 2022,
     title: "Dominique",
     description: "Estratégicamente ubicado en el barrio Cielomar, a solo 200 metros de la mejor y más exclusiva playa de la zona norte.",

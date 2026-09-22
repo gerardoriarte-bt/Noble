@@ -27,12 +27,12 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Julio Salazar',
     role: 'Gerente Financiero',
-    image: '/Equipo/team02.webp'
+    image: '/Equipo/Julio-Salazar.webp'
   },
   {
     name: 'Maru Mendoza',
     role: 'Gerente Administrativa',
-    image: '/Equipo/team03.webp'
+    image: '/Equipo/Maru-Mendoza.webp'
   },
   {
     name: 'Yeni Briceño',
@@ -47,7 +47,7 @@ const teamMembers: TeamMember[] = [
   {
     name: 'Miguel Forero',
     role: 'Administrativo',
-    image: '/Equipo/team01.webp'
+    image: '/Equipo/Miguel-Forero.webp'
   },
   {
     name: 'José David Fandiño',
